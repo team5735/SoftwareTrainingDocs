@@ -1,6 +1,7 @@
 # INTRO TO SOFTWARE
-/* This is less so a lesson and more of a presentation. The hope is to give this one in one of the first meetings, to give an overview of software. This presentation should take approx. 15-30 minutes. */
+[//]: # "This is less so a lesson and more of a presentation. The hope is to give this one in one of the first meetings, to give an overview of software. This presentation should take approx. 15-30 minutes."
 ## Opening
+
 When thinking of a robot, the physical form is often what comes to mind, yet for any practical projects, a union of two equally complex fields must be made:
 
 1. mechanics, the tangible body of any project
