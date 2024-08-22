@@ -93,6 +93,19 @@ only have one parent, except for merge commits, which are complicated).
 
 In these commit diagrams, all commits will be named based off of when they were created.
 
+### Making a commit
+
+To make a commit, you need to do the following:
+
+1. Write code
+2. Stage the files you changed
+3. Commit
+
+In order to stage the files, that is, tell git that you're ready to commit the
+changes they contain, you can run `git add .` in a terminal, assuming you're in
+the bottommost folder in the repository. Then you run `git commit -m
+"message"`, replacing "message" with your commit message (in quotation marks.)
+
 ## The merge
 
 Merges are a way of bringing together two so-called "divergent histories" by
@@ -109,8 +122,7 @@ Here, both B and C have A as a parent. This is the case when two people have
 cloned the same repository and then made their own commits without pulling or
 pushing. It's important to realize that this i a perfectly fine and normal
 situation, and will happen often if there's more than one person contribuiting
-to a project. Reconciling these two histories is the raison d'Être of `git
-merge`.
+to a project. Reconciling these two histories is the purpose of `git merge`.
 
 After a merge, the history looks like this:
 
@@ -127,7 +139,7 @@ common case that comes up when dealing with multiple people contribuiting to a
 project. The real picture is more complicated simply because of branches. More
 on that later, but that's definitely not an "intro" topic.
 
-### That's cool and all, but what do I need to do when git yells at me?
+## That's cool and all, but what do I need to do when git yells at me?
 
 Here's what is very likely to be the first error message you see, after trying
 to `git push` a change to a repository that somebody else has `git push`ed to:
@@ -190,12 +202,12 @@ person who just tried to pull is person B, who has repository B, which is why
 their commit says "master," whereas the commit that says "origin/master" is the
 latest commit in the origin repository.
 
-The reason 1299080 is "based on" (has as a parent) f267526, instead of 511f8da,
-is because at the time person B made that commit, their local repository had never
-heard of 511f8da, because even though the "master repository" may have heard of
-it, due to it having been pushed, they hadn't pulled it yet. Which is fine. But
-now person B has to deal with this (not person A), and they do that by merging
-it in.
+The reason 1299080 is "based on" (has a parent of) f267526, instead of 511f8da,
+is because at the time person B made that commit, their local repository had
+never heard of 511f8da, because even though the "master repository" may have
+heard of it, due to it having been pushed, they hadn't pulled it yet. Which is
+fine. But now person B has to deal with this (not person A), and they do that
+by merging it in.
 
 The command to do that is `git merge origin/master`, but be careful. Sometimes,
 certain git hosts (*cough cough* GitHub, but only sometimes *cough cough*) will
@@ -208,3 +220,13 @@ the `git pull` that failed, specifically this line:
 It says origin/master here because of the way I made the testing repository.
 But it may say origin/main, or maybe something else, but that's for branches
 which is LATER, goddammit.
+
+## So what can I do with this?
+
+Well, you can write code and commit it (on every change, so that everything is
+easier). You can push and handle a push conflict. And you understand enough to
+be able to read more about git.
+
+Beyond that, branches are really the only complicated thing that you need to
+learn. Once you learn that, you can do everything you can do with git, save for
+a few very situational commands.
