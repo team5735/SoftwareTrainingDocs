@@ -7,7 +7,7 @@ Use camelCase for methods and members, CamelCase for classes.
 Use factory commands if reasonable: e.g. upStopCommand Longer, more sophisticated commands go in their own class.
 Don't prefix commands with their subsystem (but do use a Command suffix.
 Separate constants files.
-Formatting: use clang-format! its .clang-format file defined in the repo.
+Formatting: use clang-format! Its .clang-format file defined in the repo.
 Commented code stinks.
 Use DoubleSections and BooleanSections and TunableNumbers and and and...
 Use "topic" branches, have a trunk dev branch, and main is a release/stable/competition branch.
@@ -32,4 +32,4 @@ Put an underscore and then the unit:
 
 # Organization
 Standups start off every meeting.
-Every now and then (TBD) we have  a longer meeting covering everything.
+Every now and then (TBD) we have a longer meeting covering everything.
