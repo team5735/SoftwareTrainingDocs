@@ -23,7 +23,11 @@ WPILib, developed at WPI (a college in Worcester), is a package of most necessar
 
 Congratulations, you have now installed WPILib (and by proxy VSCode)!
 
-## iTerm2
+## A Terminal
+
+There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer.
+
+### iTerm2
 
 iTerm2 is a simple Terminal emulator, allowing us to access the MacOS Terminal in a more restricted manner, where it would otherwise be blocked.
 
@@ -33,6 +37,25 @@ iTerm2 is a simple Terminal emulator, allowing us to access the MacOS Terminal i
 4. Check that an application named "iTerm" is now in place of the zipped file.
 
 Congratulations, you have now installed iTerm2!
+
+### Kitty
+
+Kitty may seem to be a simple terminal editor that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more.
+
+1. Either type in the following link... https://github.com/kovidgoyal/kitty/releases.
+  Alternatively:
+  1. Search "kitty docs"
+  2. Click the link titled similarly to "kitty - Kovid Goyal"
+  3. Navigate to Quickstart > Install kitty on the left sidebar
+  4. Click the link titled "GitHub releases page"
+2. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
+3. Click "show all 36 assets"
+4. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
+5. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
+6. Drag the "kitty" app to your desktop or wherever you'd like it
+7. You can "eject" the "kitty-<version>" drive-looking thing from your desktop now (right click or drag into trash)
+
+Run the app from your desktop (or wherever)! You've installed Kitty!
 
 ## Set Up Your Git Info
 
