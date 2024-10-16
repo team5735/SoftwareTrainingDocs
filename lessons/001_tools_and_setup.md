@@ -8,24 +8,42 @@ Welcome, new Software members! Today we will download and prepare various tools 
 
 WPILib, developed at WPI (a college in Worcester), is a package of most necessary tools for FRC robot control. It comes with VSCode, various Java APIs, and many additional programs that we will explore in the future. For now, it should be a quick install, all in one folder.
 
- 1. Navigate to https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html (or search "WPILib Install" and click the first link).
- 2. Scroll until the first Download, verify that it is for MacOS, and click the installation link.
- 3. Select your downloading location (I personally recommend Desktop for ease of use) and wait for it to finish installing.
-4. Open the downloaded ".dmg" file (this stands for Disk Image!) and move  "WPILibInstaller" and "WPILib_MacArm-2024.3.2-artifacts.tar.gz" out, onto your Desktop.
-5. Eject the "WPILibInstaller" *Disk Image* (It looks like a little hard drive in the icon) by right clicking and selecting eject. Doing this is not strictly necessary, but there is no reason to leave it around.
-6. Open the new "WPILibInstaller" *Application* (It looks like a W surrounded by a red hexagon, it is annoying that all of these files are named the same) and select "Open" and "Allow" when your computer gives popups.
-7. In the window opened by the installer, select "Start," "Everything," "Install for this User," and "Download for this computer only." 
-8. Wait for VSCode to install.
-9. Select "Next" and wait for other installations to finish. Then select "Finish" when prompted.
-10. Navigate to the "vscode" folder (located under your account -> WPILib -> [year]), right click the VSCode application file, and select "Make Alias."
-11. Rename the alias (shortcut) to whatever you want, and move it to your Desktop.
-12. Delete and eject whatever installation files are left on the Desktop, excluding VSCode. 
+1. Navigate to https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html (or search "WPILib Install" and click the first link).
+2. Press the big blue "Downloads" button about one screen down the page. If this opens a new tab, then scroll down and click the link that ends in 'Mac (Arm)'.
+4. Open the downloaded file however you'd like. On some browsers it shows up in the top right and you can click it while downloading, and the browser will open it when it's downloaded. If your browser doesn't feel like cooperating today, you can find it in your Downloads folder (open Finder and find it on the left).
+5. This should open a new Finder-looking window. Drag the file named WPILibInstaller onto your desktop. It should take a moment or two to copy; it's quite large.
+6. On your desktop you should find a silver drive-looking file *also* called WPILibInstaller. Drag that into the Trash (or right-click it with two fingers and select 'Eject "WPILibInstaller"').
+7. Open the new "WPILibInstaller" *Application* (It looks like a W surrounded by a red hexagon, it should be the only new thing remaining on your desktop) by double-clicking the app on your desktop and select "Open" when your computer gives popups.
+8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order. 
+9. Wait for VSCode to install. It should take a few seconds.
+10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This will most likely take a while. Then click "Finish" when prompted.
+11. Yet another Finder window should open. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop while holding Alt or drag it to your Dock. This ensures you can access it easier. You can rename the one on your desktop if you'd like.
+13. You can drag anything left over from this process into the Trash, including the installer (but obviously not the app we just worked so hard to install).
 
-Congratulations, you have now installed WPILib (and by proxy VSCode)!
+Congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
 ## A Terminal
 
 There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer.
+
+### Kitty
+
+Kitty may seem to be a simple terminal emulator that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more, such as having tabs or split-screen.
+
+1. Either type in the following link: https://github.com/kovidgoyal/kitty/releases
+  Or, for those averse to link-typing, you can
+  1. Search "kitty docs"
+  2. Click the link titled something like "kitty - Kovid Goyal"
+  3. Navigate to Quickstart > Install kitty on the left sidebar
+  4. Click the link titled "GitHub releases page"
+2. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
+3. Click "show all 36 assets"
+4. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
+5. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
+6. Drag the "kitty" app to your desktop or wherever you'd like it
+7. You can "eject" the "kitty-<version>" drive-looking thing from your desktop now (right click or drag into trash)
+
+Run the app from your desktop (or wherever)! You've installed Kitty!
 
 ### iTerm2
 
@@ -38,35 +56,16 @@ iTerm2 is a simple Terminal emulator, allowing us to access the MacOS Terminal i
 
 Congratulations, you have now installed iTerm2!
 
-### Kitty
-
-Kitty may seem to be a simple terminal editor that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more.
-
-1. Either type in the following link... https://github.com/kovidgoyal/kitty/releases.
-  Alternatively:
-  1. Search "kitty docs"
-  2. Click the link titled similarly to "kitty - Kovid Goyal"
-  3. Navigate to Quickstart > Install kitty on the left sidebar
-  4. Click the link titled "GitHub releases page"
-2. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
-3. Click "show all 36 assets"
-4. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
-5. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
-6. Drag the "kitty" app to your desktop or wherever you'd like it
-7. You can "eject" the "kitty-<version>" drive-looking thing from your desktop now (right click or drag into trash)
-
-Run the app from your desktop (or wherever)! You've installed Kitty!
-
 ## Set Up Your Git Info
 
-Very simple, just giving some identification for git to use when referring to you, but very much needed for everything we will be doing going forwards.
+This is a very simple and vital procedure that gives some identification to git (our version control system) for it to use when referring to you, but doing this is very much needed for everything we will be doing going forwards.
 
 1. Open iTerm2
 2. Type `git config --global user.name "` [your name] `"` and press enter
 3. Type `git config --global user.email "` [your email] `"` and press enter
-4. Verify that both have been properly configured by typing `git config --get user.name`, pressing enter, and checking for the name you provided, then typing `git config --get user.email` and doing the same.
+4. Verify that both have been properly configured by typing `git config user.name`, pressing enter, and checking for the name you provided, then typing `git config user.email` and doing the same.
 
-You now have id on git!
+Git now understands that you are, in fact, you!
 
 ## Clone the Sample Repo
 
@@ -78,5 +77,10 @@ Now for the most important step, getting yourself connected to the rest of the t
 4. Select a suitable file location.
 5. When prompted, select "Allow" to sign in with GitHub. If you are already signed in on your browser, then it should immediately sign you in. Otherwise, sign in to GitHub.
 6. VSCode should start working to download the repository now.
+
+Alternatively, if you'd like to get used to git from the start, you can use the terminal. It really isn't scary at all. You do need to sign in using VSCode first, however.
+
+1. Open VSCode.
+2. 
 
 Congratulations! You now have code on your computer that is able to track, across the internet, the overall team's progress! We will go more into detail on why and how this works during future lessons, but for now you should know that this is no small feat.
