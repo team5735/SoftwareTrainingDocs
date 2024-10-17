@@ -11,14 +11,14 @@ WPILib, developed at WPI (a college in Worcester), is a package of most necessar
 1. Navigate to https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html (or search "WPILib Install" and click the first link).
 2. Press the big blue "Downloads" button about one screen down the page. If this opens a new tab, then scroll down and click the link that ends in 'Mac (Arm)'.
 4. Open the downloaded file however you'd like. On some browsers it shows up in the top right and you can click it while downloading, and the browser will open it when it's downloaded. If your browser doesn't feel like cooperating today, you can find it in your Downloads folder (open Finder and find it on the left).
-5. This should open a new Finder-looking window. Drag the file named WPILibInstaller onto your desktop. It should take a moment or two to copy; it's quite large.
-6. On your desktop you should find a silver drive-looking file *also* called WPILibInstaller. Drag that into the Trash (or right-click it with two fingers and select 'Eject "WPILibInstaller"').
-7. Open the new "WPILibInstaller" *Application* (It looks like a W surrounded by a red hexagon, it should be the only new thing remaining on your desktop) by double-clicking the app on your desktop and select "Open" when your computer gives popups.
-8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order. 
+5. This should open a new Finder-looking window. Drag the app named WPILibInstaller and the other zip-like file contained in the .dmg (disk image) onto your desktop. It should take a moment or two to copy; they're sizable.
+6. On your desktop you should find a silver drive-looking file confusingly called WPILibInstaller. Drag that into the Trash (or right-click it with two fingers and select 'Eject "WPILibInstaller"'). Make sure you're doing this with the silver drive and not the red-and-black-with-a-W-on-it application.
+7. Open the new "WPILibInstaller" application (it should be the only thing named that that's new to your desktop) by double-clicking it, then selecting "Open" and "Allow" when your computer gives popups.
+8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order.
 9. Wait for VSCode to install. It should take a few seconds.
-10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This will most likely take a while. Then click "Finish" when prompted.
-11. Yet another Finder window should open. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop while holding Alt or drag it to your Dock. This ensures you can access it easier. You can rename the one on your desktop if you'd like.
-13. You can drag anything left over from this process into the Trash, including the installer (but obviously not the app we just worked so hard to install).
+10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This should take 'a hot second'. Then click "Finish" when prompted.
+11. Yet another Finder window should open, which should hopefully help you *find* what you just installed. *pause to let the pun sink in* *realize nobody cares* Ok- Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop while holding Option to make a shortcut or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like.
+13. You can drag anything left over from this process into the Trash, including the installer and the artifacts gzipped tape archive (a very fancy git) (but obviously not the app we just worked so hard to install).
 
 Congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
@@ -80,7 +80,14 @@ Now for the most important step, getting yourself connected to the rest of the t
 
 Alternatively, if you'd like to get used to git from the start, you can use the terminal. It really isn't scary at all. You do need to sign in using VSCode first, however.
 
-1. Open VSCode.
-2. 
+1. Open VSCode using the shortcut you just created.
+2. Click on the person in the bottom left of the screen (the accounts icon) and try your darndest to sign in (will update with details when MacOS stops bullying me).
+3. Close the ugly & slow GUI /j and open the terminal you downloaded.
+4. Run these commands (the bit before the ->) (you can change the directory names but here's what I like, assuming you'll continue to prefer the terminal) (the bolded bits are mnemonics to help you remember the commands):
+   - `mkdir robotics` -> this command **m**a**k**es the 'robotics' **dir**ectory
+   - `cd robotics` -> **c**hange **d**irectory to 'robotics': these two are normal commands that work Everywhere Except Windows. 'robotics' should now be in your prompt (the thing before your cursor), showing you that you're in that directory.
+   - `git clone https://github.com/team5735/SampleRobotCodebase` -> this uses **git** to **clone** (download) the repository at that URL. You can get the URL by copying it from the search bar after navigating to it on GitHub, or by copying it from here; whichever's easier.
+   - `cd SampleRobotCodebase` -> the above git command 'clones' (downloads) the repository into the 'SampleRobotCodebase' directory, into which you can `cd`.
+5. Enjoy starting on the most rewarding learning curve of your life. The only downside is that you'll have to endure me (Sebastian) for help :^)
 
-Congratulations! You now have code on your computer that is able to track, across the internet, the overall team's progress! We will go more into detail on why and how this works during future lessons, but for now you should know that this is no small feat.
+Congratulations! You now have code on your computer that is able to track - across the internet - the overall team's progress! We will go more into detail on why and how this works during future lessons (notably the two git lessons), but for now you should know that this is no small feat.
