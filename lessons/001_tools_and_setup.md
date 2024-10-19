@@ -67,6 +67,23 @@ This is a very simple and vital procedure that gives some identification to git 
 
 Git now understands that you are, in fact, you!
 
+## Make a GitHub Account
+
+This will be the most important step in all of this, creating an account for yourself on the service we use, GitHub, and having that account added into our team's Organization.
+
+1. Navigate to https://github.com and click "Sign Up."
+2. Enter your email (can be any email of your choice, you can add others to your account in the future).  
+3.  Create a password (make it strong!).
+4.  Create a username (preferably one with your name in it, but any should be fine).
+5. Press "Continue."
+6. Complete the captcha (**if you get an error** stating that GitHub cannot verify your captcha results, **try again on a home wifi network**).
+7. Copy over the code sent to your email (should be a string of numbers).
+8. GitHub should now prompt you to log in with your new account by entering email and password, do so!
+9. You may be prompted to "personalize" your experience, if you really want to do so, then do, otherwise look for a button labelled "skip personalization" (it may be a bit hidden).
+10. Send your account name to one of the returning Software members (whoever is running the lesson if in person, otherwise ask on the team Discord), this is a necessary step because it will let you access the team's code.
+
+Congratulations! You now have a GitHub account and are able to access the team's code!
+
 ## Clone the Sample Repo
 
 Now for the most important step, getting yourself connected to the rest of the team via Git. We will go over all sorts of important and interesting information about Git and GitHub in future lessons, but for now you'll just be copying down and syncing yourself to code from the team's database.
