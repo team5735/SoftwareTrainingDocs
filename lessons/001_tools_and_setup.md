@@ -24,11 +24,11 @@ Congratulations, you've installed WPILib and VSCode! You're almost ready to writ
 
 ## A Terminal
 
-There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer.
+There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer, so what you learn here can be applied to, say, a computer that you use at home.
 
 ### Kitty
 
-Kitty may seem to be a simple terminal emulator that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more, such as having tabs or split-screen.
+Kitty may seem to be a simple terminal emulator that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more, such as having tabs or split-screen. It comes with a myriad of keyboard shortcuts and features, but fortunately the defaults are good enough.
 
 1. Either type in the following link: https://github.com/kovidgoyal/kitty/releases
   Or, for those averse to link-typing, you can
@@ -80,7 +80,7 @@ This will be the most important step in all of this, creating an account for you
 7. Copy over the code sent to your email (should be a string of numbers).
 8. GitHub should now prompt you to log in with your new account by entering email and password, do so!
 9. You may be prompted to "personalize" your experience, if you really want to do so, then do, otherwise look for a button labelled "skip personalization" (it may be a bit hidden).
-10. Send your account name to one of the returning Software members (whoever is running the lesson if in person, otherwise ask on the team Discord), this is a necessary step because it will let you access the team's code.
+10. Send your account name to one of the returning Software members (whoever is running the lesson if in person, otherwise ask on the team Discord). This is a necessary step because it will let you access the team's code.
 
 Congratulations! You now have a GitHub account and are able to access the team's code!
 
@@ -102,7 +102,7 @@ Alternatively, if you'd like to get used to git from the start, you can use the 
 3. Close the ugly & slow GUI /j and open the terminal you downloaded.
 4. Run these commands (the bit before the ->) (you can change the directory names but here's what I like, assuming you'll continue to prefer the terminal) (the bolded bits are mnemonics to help you remember the commands):
    - `mkdir robotics` -> this command **m**a**k**es the 'robotics' **dir**ectory
-   - `cd robotics` -> **c**hange **d**irectory to 'robotics': these two are normal commands that work Everywhere Except Windows. 'robotics' should now be in your prompt (the thing before your cursor), showing you that you're in that directory.
+   - `cd robotics` -> **c**hange **d**irectory to 'robotics': cd and mkdir two are normal commands that work Everywhere Except Windows. 'robotics' should now be in your prompt (the thing before your cursor) (it should replace ~, which is another name for your home directory), showing you that you're in that directory.
    - `git clone https://github.com/team5735/SampleRobotCodebase` -> this uses **git** to **clone** (download) the repository at that URL. You can get the URL by copying it from the search bar after navigating to it on GitHub, or by copying it from here; whichever's easier.
    - `cd SampleRobotCodebase` -> the above git command 'clones' (downloads) the repository into the 'SampleRobotCodebase' directory, into which you can `cd`.
 5. Enjoy starting on the most rewarding learning curve of your life. The only downside is that you'll have to endure me (Sebastian) for help :^)
