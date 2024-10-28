@@ -102,3 +102,7 @@ In this case, `FactoryCommands.runOnceUntil()` is defined as taking a `Runnable`
 If we instead wanted to create new code exclusively for this situation, we could have written `() -> { new code }` where the curly brackets represent the function of the lambda.
 
 This may all be a little confusing as, but as you work with lambdas in code, you should hopefully build a sufficiently advanced understanding of them, for there is not much more to them than what has been here outlined. 
+
+### Interfaces
+
+An interface is thankfully simple, after the complexity of a lambda. Interfaces are general types, which must be "implemented", just like a class would be extended, though a class can implement multiple interfaces. An interface can have instances, constructors, and methods, just like a class, but these **do not need to contain code**. What an interface does, then, is guarantee certain methods and data values will be in its implementations, though it says nothing about what those methods will do. 
