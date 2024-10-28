@@ -17,8 +17,9 @@ WPILib, developed at WPI (a college in Worcester), is a package of most necessar
 8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order.
 9. Wait for VSCode to install. It should take a few seconds.
 10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This should take 'a hot second'. Then click "Finish" when prompted.
-11. Yet another Finder window should open, which should hopefully help you *find* what you just installed. *pause to let the pun sink in* *realize nobody cares* Ok- Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop while holding Option to make a shortcut or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like.
+11. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop **while holding Option** to **make a shortcut** or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like. ***THE FILE ITSELF MUST STAY WITHIN THE FOLDER!!!!!***
 13. You can drag anything left over from this process into the Trash, including the installer and the artifacts gzipped tape archive (a very fancy git) (but obviously not the app we just worked so hard to install).
+14. Open the VSCode application and check for a little red and black "w" symbol around the top right. If you do not see one, **DOUBLE CHECK THAT YOU COMPLETED STEP 11 CORRECTLY**, if not, just make sure that the application goes back into the `vscode` folder in the `wpilib` directory, as that is where it **must stay**.
 
 Congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
