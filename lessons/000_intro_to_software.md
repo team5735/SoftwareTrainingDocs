@@ -1,6 +1,6 @@
 # INTRO TO SOFTWARE
 
-> This is less so a lesson and more of a presentation. The hope is to give this one in one of the first meetings, to give an overview of software. This presentation should take approx. 15-30 minutes.
+> This is less so a lesson and more of a presentation. The hope is to give this one in one of the first meetings, to give an overview of software.
 
 ## Opening
 
@@ -13,7 +13,7 @@ Software is responsible for moving data to and from different core parts within 
 
 We hope that, by the end of this presentation:
 - you will understand the basics of robot code and why it matters
-- you will understand the Software subteam and its workflows
+- you will understand the software subteam and its workflows
 - some of you will feel a bit of interest in joining Software
 
 ## The Code
@@ -22,21 +22,21 @@ We hope that, by the end of this presentation:
 
 Within all FRC robots is a component called a RoboRIO. It is a processor with wires that run to all subsystems of the robot, acting as the information hub by taking feedback from each component and sending back commands. 
 
-The of Software is to tap into this flow, to give the RoboRIO and  each subsystem commands, and to utilize the data coming from different sensors. To talk to the RoboRIO, or simply the robot as a whole, requires writing and providing code to be executed when running the robot.
+The goal of software is to tap into this flow, writing code for the RoboRIO to run, and to utilize the data coming from different sensors. To talk to the RoboRIO, or simply the robot as a whole, requires writing and providing code to be executed when running the robot.
 
-When coding the robot, tools are provided by FIRST to make it easier, allowing for quick exporting to the RoboRIO. These tools are called WPILib and officially support three programming languages, as of 2024. These languages are:
+The FRC community has developed a set of tools and libraries for robot programming, allowing for quick development. These tools and libraries are called WPILib and officially support three programming languages, namely:
 
 - C++
 - Java
 - Python
 
-On the Control Freaks' Software team, we choose to use Java, placing us within the majority of FRC teams. We use Java, though it may have slower performance, primarily because it is the most accessible here at WHS. Many students have taken or are going to take the AP Computer Science A class and learned Java, and for those who have not there are many online resources through which to learn. The intention is that minimal experience will be necessary for any new Software members.
+On the Control Freaks' Software team, we choose to use Java, as do the majority of software teams. The main reason for this choice is its accessibility at WHS, considering it's taught in APCSA, or at least easy for those who want to learn seperately, easy to learn. The intention is that no minimal experience will be necessary for any new Software members.
 
 ### Architecture
 
-WPILib uses a "Command-based" structure. This means that every action for the Robot should be defined by an relative Command object within the code. These Commands are then ordered and run every 20 milliseconds by an internal process called the Command Scheduler. Commands can be tied to Triggers such as button presses from our Driver's controller, or activated specifically within the code.
+WPILib uses a "Command-based" structure. This means that every action for the Robot should be defined by a Command object within the code. Commands can be tied to Triggers such as button presses from our Driver's controller, or activated manually within the code.
 
-A Command may "require" a given subsystem, those being another important part of Command-Based. The definition of a subsystem is hopefully self-explanatory. It is smaller system contained within a larger system, a sub-system. Often subsystems are physically defined, being modular parts of the robot, built by Mechanical. Within Software, we also create subsystems, though within the code, usually to reflect such a physical structure.
+A Command may "require" a given subsystem, which is another large part of this framework. A subsystem corresponds to, well, a physical subsystem on the robot. Often subsystems are physically defined, being modular parts of the robot, built by Mechanical. Within Software, we also create subsystems, though within the code, usually to reflect such a physical structure.
 
 A coded Subsystem is often defined as owning electrical components that only it is intended to use. Frequently these components are motors or sensors, though Subsystems can represent abstract things such as lighting or vision. Any component with logic behind it will have a relevant Subsystem. Within the code for each subsystem we will typically define a set of Commands for that Subsystem, gating access of the inner components except for through these Commands. Only one Command can ever require a given Subsystem, to run another with the same Subsystem would require ending the previous Command. 
 
