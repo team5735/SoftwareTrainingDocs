@@ -29,7 +29,3 @@ Put an underscore and then the unit:
 - rad if necessary
 - rot "device rotations"
 - gram
-
-# Organization
-Standups start off every meeting.
-Every now and then (TBD) we have a longer meeting covering everything.
