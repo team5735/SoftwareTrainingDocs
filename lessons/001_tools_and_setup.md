@@ -2,13 +2,17 @@
 
 > This lesson should be simple and middle-range, anywhere from 1-2hr, simply because it will be a collective process and people will need individual help. If finished early, we can probably just chill.
 
-Welcome, new Software members! Today we will download and prepare various tools on your MacBooks, discussing their purposes as we go.
+Welcome, new Software members! If you weren't here last lesson, you can read it [here](https://github.com/team5735/SoftwareTrainingDocs/blob/main/lessons/000_intro_to_software.md). Today we will download and prepare various tools on your MacBooks.
+
+This lesson is easier to follow if you have the Markdown version open in your browser. The easiest way to go there is to type the following into your browser's address bar exactly:
+`github.com/team5735/SoftwareTrainingDocs`
+Then, click on the `lessons` folder, followed by `001_tools_and_setup.md` (this document).
 
 ## WPILib
 
-WPILib, developed at WPI (a college in Worcester), is a package of most necessary tools for FRC robot control. It comes with VSCode, various Java APIs, and many additional programs that we will explore in the future. For now, it should be a quick install, all in one folder.
+WPILib, developed at WPI, is a package of most necessary tools for FRC programming. It comes with VSCode, various Java APIs, and many additional programs that we will explore in the future. For now, it should be a quick install, all in one folder. It's what we'll use instead of IntelliJ, if you took APCSA. If you're advanced enough to have something else you prefer, you still need to install this.
 
-1. Navigate to https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html (or search "WPILib Install" and click the first link).
+1. Follow [this link](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) (or search "WPILib Install" and click the first link).
 2. Press the big blue "Downloads" button about one screen down the page. If this opens a new tab, then scroll down and click the link that ends in 'Mac (Arm)'.
 4. Open the downloaded file however you'd like. On some browsers it shows up in the top right and you can click it while downloading, and the browser will open it when it's downloaded. If your browser doesn't feel like cooperating today, you can find it in your Downloads folder (open Finder and find it on the left).
 5. This should open a new Finder-looking window. Drag the app named WPILibInstaller and the other zip-like file contained in the .dmg (disk image) onto your desktop. It should take a moment or two to copy; they're sizable.
@@ -17,9 +21,9 @@ WPILib, developed at WPI (a college in Worcester), is a package of most necessar
 8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order.
 9. Wait for VSCode to install. It should take a few seconds.
 10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This should take 'a hot second'. Then click "Finish" when prompted.
-11. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop **while holding Option** to **make a shortcut** or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like. ***THE FILE ITSELF MUST STAY WITHIN THE FOLDER!!!!!***
+11. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop **while holding Option** to **make a shortcut** or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like. ***THE APP ITSELF MUST STAY WHERE IT IS!!!!!***
 13. You can drag anything left over from this process into the Trash, including the installer and the artifacts gzipped tape archive (a very fancy git) (but obviously not the app we just worked so hard to install).
-14. Open the VSCode application and check for a little red and black "w" symbol around the top right. If you do not see one, **DOUBLE CHECK THAT YOU COMPLETED STEP 11 CORRECTLY**, if not, just make sure that the application goes back into the `vscode` folder in the `wpilib` directory, as that is where it **must stay**.
+14. Open the VSCode application and check for a little red and black "w" symbol around the top right. If you do not see one, **DOUBLE CHECK THAT YOU COMPLETED STEP 11 CORRECTLY**, if not, just make sure that the application goes back into the `vscode` folder in the `wpilib` directory: it's important where it is located.
 
 Congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
@@ -27,9 +31,13 @@ Congratulations, you've installed WPILib and VSCode! You're almost ready to writ
 
 There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer, so what you learn here can be applied to, say, a computer that you use at home.
 
-### Kitty
+If you don't want to use either kitty or iTerm2, the VSCode built-in terminal should also work.
 
-Kitty may seem to be a simple terminal emulator that gets out of your way and just works, but when you need it to be more powerful, it can do anything others can and more, such as having tabs or split-screen. It comes with a myriad of keyboard shortcuts and features, but fortunately the defaults are good enough.
+### kitty
+
+Kitty is a popular terminal program and my (Sebastian)'s favorite pick.
+
+You can skip to step 3 by clicking on [this link](https://github.com/kovidgoyal/kitty/releases/latest).
 
 1. Either type in the following link: https://github.com/kovidgoyal/kitty/releases
   Or, for those averse to link-typing, you can
@@ -38,7 +46,7 @@ Kitty may seem to be a simple terminal emulator that gets out of your way and ju
   3. Navigate to Quickstart > Install kitty on the left sidebar
   4. Click the link titled "GitHub releases page"
 2. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
-3. Click "show all 36 assets"
+3. Click "show all 36 assets" (scroll down a couple screens)
 4. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
 5. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
 6. Drag the "kitty" app to your desktop or wherever you'd like it
@@ -48,7 +56,7 @@ Run the app from your desktop (or wherever)! You've installed Kitty!
 
 ### iTerm2
 
-iTerm2 is a simple Terminal emulator, allowing us to access the MacOS Terminal in a more restricted manner, where it would otherwise be blocked.
+iTerm2 is an alternative terminal program, allowing us to access the MacOS Terminal in a more restricted manner, where it would otherwise be blocked.
 
 1. Navigate to https://iterm2.com/downloads.html (or search "iTerm2 install" and click the link titled "Downloads").
 2. Click the link to download the latest version of iTerm2 (right now it should be 3.5.5), select your downloading location (again, I recommend Desktop) and click "Save" to start downloading.
@@ -61,23 +69,24 @@ Congratulations, you have now installed iTerm2!
 
 This is a very simple and vital procedure that gives some identification to git (our version control system) for it to use when referring to you, but doing this is very much needed for everything we will be doing going forwards.
 
-1. Open iTerm2
+1. Open a terminal
 2. Type `git config --global user.name "` [your name] `"` and press enter
 3. Type `git config --global user.email "` [your email] `"` and press enter
 4. Verify that both have been properly configured by typing `git config user.name`, pressing enter, and checking for the name you provided, then typing `git config user.email` and doing the same.
 
-Git now understands that you are, in fact, you!
+You should now be able to commit.
 
 ## Make a GitHub Account
 
-This will be the most important step in all of this, creating an account for yourself on the service we use, GitHub, and having that account added into our team's Organization.
+This will be the most important step in all of this, creating an account for yourself on GitHub, and having that account added into our team's organization.
 
 1. Navigate to https://github.com and click "Sign Up."
 2. Enter your email (can be any email of your choice, you can add others to your account in the future).  
-3.  Create a password (make it strong!).
-4.  Create a username (preferably one with your name in it, but any should be fine).
+3. Create a password (make it strong!).
+4. Create a username (preferably one with your name in it, but any should be fine).
 5. Press "Continue."
-6. Complete the captcha (**if you get an error** stating that GitHub cannot verify your captcha results, **try again on a home wifi network**).
+> [!NOTE]
+> If you get an error stating that GitHub cannot verify your captcha results, **try again on a home wifi network**.
 7. Copy over the code sent to your email (should be a string of numbers).
 8. GitHub should now prompt you to log in with your new account by entering email and password, do so!
 9. You may be prompted to "personalize" your experience, if you really want to do so, then do, otherwise look for a button labelled "skip personalization" (it may be a bit hidden).
