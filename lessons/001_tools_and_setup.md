@@ -1,7 +1,5 @@
 # Tools and Setup
 
-> This lesson should be simple and middle-range, anywhere from 1-2hr, simply because it will be a collective process and people will need individual help. If finished early, we can probably just chill.
-
 Welcome, new Software members! If you weren't here last lesson, you can read it [here](https://github.com/team5735/SoftwareTrainingDocs/blob/main/lessons/000_intro_to_software.md). Today we will download and prepare various tools on your MacBooks.
 
 This lesson is easier to follow if you have the Markdown version open in your browser. The easiest way to go there is to type the following into your browser's address bar exactly:
@@ -29,52 +27,43 @@ Congratulations, you've installed WPILib and VSCode! You're almost ready to writ
 
 ## A Terminal
 
-There's two options for a terminal program on a Mac, and both are equally good for what we're doing. Historically iTerm2 has been used, but Kitty is a newer (and faster) option that has all the same features but can also be run on any computer, so what you learn here can be applied to, say, a computer that you use at home.
+A terminal program is a program that lets you type in terminal commands. It's generally the most efficient and fast method of accomplishing tasks, despite being noticeably harder to set up. kitty and iTerm2 are two popular terminal editors that this document explains how to install if you'd like, but most tasks in these documents don't need a terminal, so if you're ok with sacrificing an admittedly small amount of productivity and efficiency for ease of use, feel free to use a GUI (for FRC purposes, you can do most of your tasks with the VSCode GUI).
 
-If you don't want to use either kitty or iTerm2, the VSCode built-in terminal should also work.
+The VSCode terminal is the easiest to set up as you've already done so. kitty is Sebastian's preferred terminal, but the differences between the three are relatively nonexistent.
 
-### kitty
+### VSCode terminal
 
-Kitty is a popular terminal program and my (Sebastian)'s favorite pick.
-
-You can skip to step 3 by clicking on [this link](https://github.com/kovidgoyal/kitty/releases/latest).
-
-1. Either type in the following link: https://github.com/kovidgoyal/kitty/releases
-  Or, for those averse to link-typing, you can
-  1. Search "kitty docs"
-  2. Click the link titled something like "kitty - Kovid Goyal"
-  3. Navigate to Quickstart > Install kitty on the left sidebar
-  4. Click the link titled "GitHub releases page"
-2. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
-3. Click "show all 36 assets" (scroll down a couple screens)
-4. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
-5. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
-6. Drag the "kitty" app to your desktop or wherever you'd like it
-7. You can "eject" the "kitty-<version>" drive-looking thing from your desktop now (right click or drag into trash)
-
-Run the app from your desktop (or wherever)! You've installed Kitty!
+As an alternative to a standalone terminal program, the VSCode terminal is a good entry point for learning the ways of the terminal. You can open it by going to View > Terminal from the menu bar in the top left of your screen.
 
 ### iTerm2
-
-iTerm2 is an alternative terminal program, allowing us to access the MacOS Terminal in a more restricted manner, where it would otherwise be blocked.
 
 1. Navigate to https://iterm2.com/downloads.html (or search "iTerm2 install" and click the link titled "Downloads").
 2. Click the link to download the latest version of iTerm2 (right now it should be 3.5.5), select your downloading location (again, I recommend Desktop) and click "Save" to start downloading.
 3. Open the downloaded ".zip" file.
 4. Check that an application named "iTerm" is now in place of the zipped file.
 
-Congratulations, you have now installed iTerm2!
+### kitty
+
+You can skip to step 3 by clicking on [this link](https://github.com/kovidgoyal/kitty/releases/latest).
+
+1. Search "kitty docs"
+2. Click the link titled something like "kitty - Kovid Goyal"
+3. Navigate to Quickstart > Install kitty on the left sidebar
+4. Click the link titled "GitHub releases page"
+5. Scroll down to the "Assets" section of the first version, it should say "Latest" next to the version number
+6. Click "show all 36 assets" (scroll down a couple screens)
+7. Scroll down to the bottom of the link overrun and click the "macOS dmg" file
+8. Open your Downloads folder and open the downloaded kitty-\<version>.dmg, where \<version> is the latest version
+9. Drag the "kitty" app to your desktop. Do not drag it into the Applications folder that shows up next to kitty, as you can't.
+10. You can "eject" the "kitty-\<version>" drive-looking thing from your desktop now (right click or drag into trash)
 
 ## Set Up Your Git Info
 
-This is a very simple and vital procedure that gives some identification to git (our version control system) for it to use when referring to you, but doing this is very much needed for everything we will be doing going forwards.
+You need to do this before writing code. This needs to be done in a terminal even if you'd rather use the GUI.
 
-1. Open a terminal
-2. Type `git config --global user.name "` [your name] `"` and press enter
-3. Type `git config --global user.email "` [your email] `"` and press enter
-4. Verify that both have been properly configured by typing `git config user.name`, pressing enter, and checking for the name you provided, then typing `git config user.email` and doing the same.
-
-You should now be able to commit.
+1. Open a terminal (any of kitty, iTerm2, or the VSCode integrated terminal)
+2. Type `git config --global user.name "` <your name> `"` and press enter
+3. Type `git config --global user.email "` <your email> `"` and press enter
 
 ## Make a GitHub Account
 
@@ -107,18 +96,22 @@ Now for the most important step, getting yourself connected to the rest of the t
 5. When prompted, select "Allow" to sign in with GitHub. If you are already signed in on your browser, then it should immediately sign you in. Otherwise, sign in to GitHub.
 6. VSCode should start working to download the repository now.
 
-Alternatively, if you'd like to get used to git from the start, you can use the terminal. It really isn't scary at all. You do need to sign in using VSCode first, however.
+Alternatively, if you'd like to get used to the terminal from the start, you can use the terminal. It really isn't scary at all. You do need to sign in using VSCode first, however.
+
+> [!WARNING]
+> If you want help, you'll have to ask Sebastian.
 
 1. Open VSCode using the shortcut you just created.
 2. Click on the person in the bottom left of the window and try your darndest to sign in (will update with details when MacOS stops bullying me).
 3. Access your terminal of choice.
 4. Run these commands (the bit before the ->) (the bolded bits are mnemonics to help you remember the commands):
    - `mkdir robotics` -> this command **m**a**k**es the 'robotics' **dir**ectory
-   - `cd robotics` -> **c**hange **d**irectory to 'robotics'; 'robotics' should now be in your prompt (replacing ~, which is another name for your home directory), which tells you that you're in that directory.
-      > [!TIP]
-      > If you choose to the continue using the terminal, these commands are very useful.
+   - `cd robotics` -> **c**hange **d**irectory to 'robotics'; 'robotics' should now be in your prompt (replacing ~, your home directory), which tells you that you're in that directory.
    - `git clone https://github.com/team5735/SampleRobotCodebase` -> this uses **git** to **clone** (download a copy of) the repository at that URL. You can get the URL by copying it from the search bar after navigating to it on GitHub, or by copying it from here; whichever's easier.
    - `cd SampleRobotCodebase` -> the above git command 'clones' (downloads) the repository into the 'SampleRobotCodebase' directory, into which you can `cd`.
-5. Enjoy starting on the most rewarding learning curve of your life. The only downside is that you'll have to endure me (Sebastian) for help :^)
 
-Congratulations! You now have code on your computer that is able to track - across the internet - the overall team's progress! We will go more into detail on why and how this works during future lessons (notably the two git lessons), but for now you should know that this is no small feat.
+> [!TIP]
+> If you choose to the continue learning the terminal, you can familiarize yourself with `mkdir` and `cd`, as well as other commands by using them alongside a Finder window to see what they do.
+> If demand is high, I'll write a terminal cheat sheet.
+
+You can now work on the robot code.
