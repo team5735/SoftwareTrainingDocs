@@ -62,8 +62,8 @@ You can skip to step 3 by clicking on [this link](https://github.com/kovidgoyal/
 You need to do this before writing code. This needs to be done in a terminal even if you'd rather use the GUI.
 
 1. Open a terminal (any of kitty, iTerm2, or the VSCode integrated terminal)
-2. Type `git config --global user.name "` <your name> `"` and press enter
-3. Type `git config --global user.email "` <your email> `"` and press enter
+2. Type `git config --global user.name "` \<your name> `"` and press enter
+3. Type `git config --global user.email "` \<your email> `"` and press enter
 
 ## Make a GitHub Account
 
