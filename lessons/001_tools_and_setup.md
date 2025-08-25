@@ -90,9 +90,11 @@ This will be the most important step in all of this, creating an account for you
 7. Copy over the code sent to your email (should be a string of numbers).
 8. GitHub should now prompt you to log in with your new account by entering email and password, do so!
 9. You may be prompted to "personalize" your experience, if you really want to do so, then do, otherwise look for a button labelled "skip personalization" (it may be a bit hidden).
-10. Send your account name to one of the returning Software members (whoever is running the lesson if in person, otherwise ask on the team Discord). This is a necessary step because it will let you access the team's code.
+10. Join the organization
+    - If you're at home, send your account name to one of the returning Software members (whoever is running the lesson if in person, otherwise ask on the team Discord). This is a necessary step because it will let you access the team's code.
+    - Otherwise, leads and/or mentors should be able to let you into the organization.
 
-Congratulations! You now have a GitHub account and are able to access the team's code!
+If you weren't able to make a GitHub account while at school, it's no problem. You can still clone and should sign in later.
 
 ## Clone the Sample Repo
 
@@ -108,12 +110,14 @@ Now for the most important step, getting yourself connected to the rest of the t
 Alternatively, if you'd like to get used to git from the start, you can use the terminal. It really isn't scary at all. You do need to sign in using VSCode first, however.
 
 1. Open VSCode using the shortcut you just created.
-2. Click on the person in the bottom left of the screen (the accounts icon) and try your darndest to sign in (will update with details when MacOS stops bullying me).
-3. Close the ugly & slow GUI /j and open the terminal you downloaded.
-4. Run these commands (the bit before the ->) (you can change the directory names but here's what I like, assuming you'll continue to prefer the terminal) (the bolded bits are mnemonics to help you remember the commands):
+2. Click on the person in the bottom left of the window and try your darndest to sign in (will update with details when MacOS stops bullying me).
+3. Access your terminal of choice.
+4. Run these commands (the bit before the ->) (the bolded bits are mnemonics to help you remember the commands):
    - `mkdir robotics` -> this command **m**a**k**es the 'robotics' **dir**ectory
-   - `cd robotics` -> **c**hange **d**irectory to 'robotics': cd and mkdir two are normal commands that work Everywhere Except Windows. 'robotics' should now be in your prompt (the thing before your cursor) (it should replace ~, which is another name for your home directory), showing you that you're in that directory.
-   - `git clone https://github.com/team5735/SampleRobotCodebase` -> this uses **git** to **clone** (download) the repository at that URL. You can get the URL by copying it from the search bar after navigating to it on GitHub, or by copying it from here; whichever's easier.
+   - `cd robotics` -> **c**hange **d**irectory to 'robotics'; 'robotics' should now be in your prompt (replacing ~, which is another name for your home directory), which tells you that you're in that directory.
+      > [!TIP]
+      > If you choose to the continue using the terminal, these commands are very useful.
+   - `git clone https://github.com/team5735/SampleRobotCodebase` -> this uses **git** to **clone** (download a copy of) the repository at that URL. You can get the URL by copying it from the search bar after navigating to it on GitHub, or by copying it from here; whichever's easier.
    - `cd SampleRobotCodebase` -> the above git command 'clones' (downloads) the repository into the 'SampleRobotCodebase' directory, into which you can `cd`.
 5. Enjoy starting on the most rewarding learning curve of your life. The only downside is that you'll have to endure me (Sebastian) for help :^)
 
