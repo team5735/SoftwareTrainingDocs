@@ -1,59 +1,42 @@
-# INTRO TO SOFTWARE
+# Intro to Software
 
-> This is less so a lesson and more of a presentation. The hope is to give this one in one of the first meetings, to give an overview of software.
+Welcome to the Software subteam in the Control Freaks. This'll be a short first lesson to get you into the world of software.
 
-## Opening
+Think of software as the robot's nervous system. It's the code that:
 
-When thinking of a robot, the physical form is often what comes to mind, yet for any practical projects, two equally complex fields must be brought together:
+* **Gathers information** from sensors.
+* **Makes decisions** based on that information.
+* **Sends commands** to the motors and other moving parts.
 
-1. mechanics, the tactile body of any project
-2. software, the nervous system of the robot
+### What Language Do We Speak?
 
-Software is responsible for moving data to and from different core parts within the robot, analyzing that data, and using the results of that analysis to perform tasks.
+Inside every FRC robot is a computer called the **RoboRIO** made specifically for this competition. Our job is naturally to write code that will run on that computer.
 
-We hope that, by the end of this presentation:
-- you will understand the basics of robot code and why it matters
-- you will understand the software subteam and its workflows
-- some of you will feel a bit of interest in joining Software
+The FRC community has created a fantastic set of tools called **WPILib** that makes writing robot code much easier. WPILib officially supports three languages:
 
-## The Code
+* C++
+* Java
+* Python
 
-### Languages
+Here on the Control Freaks, we use **Java**, because it's taught in APCSA at WHS, making it accessible to many students. But don't worry if you've never written a line of Java in your life! We'll teach you everything you need to know in lesson 002 (the third one), after setup.
 
-Within all FRC robots is a component called a RoboRIO. It is a processor with wires that run to all subsystems of the robot, acting as the information hub by taking feedback from each component and sending back commands. 
+### How We Structure Our Code
 
-The goal of software is to tap into this flow, writing code for the RoboRIO to run, and to utilize the data coming from different sensors. To talk to the RoboRIO, or simply the robot as a whole, requires writing and providing code to be executed when running the robot.
+We use a "Command-based" programming model. It sounds fancy, but the idea is simple:
 
-The FRC community has developed a set of tools and libraries for robot programming, allowing for quick development. These tools and libraries are called WPILib and officially support three programming languages, namely:
+* **Subsystems:** We break the robot down into its physical parts in the code. The drivetrain, the shooter, the climber – each of these is a **subsystem**.
+* **Commands:** A **command** is a specific action that a subsystem can perform. For example, the shooter subsystem might have a "shoot" command, and the drivetrain might have a "drive forward" command.
 
-- C++
-- Java
-- Python
+With this structure, our code directly represents the robot and its behaviour, which makes the code much easier to write and think about.
 
-On the Control Freaks' Software team, we choose to use Java, as do the majority of software teams. The main reason for this choice is its accessibility at WHS, considering it's taught in APCSA, or at least easy for those who want to learn seperately, easy to learn. The intention is that no minimal experience will be necessary for any new Software members.
+## The Software Subteam
 
-### Architecture
+Our job is to write this code. Ideally, we work closely with the people in the other room who chose mechanical, so that they don't build something we can't code and so that our code makes sense with the pile of metal they've built.
 
-WPILib uses a "Command-based" structure. This means that every action for the Robot should be defined by a Command object within the code. Commands can be tied to Triggers such as button presses from our Driver's controller, or activated manually within the code.
+Ok, that's it for this lesson. I know you were all thoroughly excited for a full lecture, but those days are coming later. I hope you stick with us.
 
-A Command may "require" a given subsystem, which is another large part of this framework. A subsystem corresponds to, well, a physical subsystem on the robot. Often subsystems are physically defined, being modular parts of the robot, built by Mechanical. Within Software, we also create subsystems, though within the code, usually to reflect such a physical structure.
+These lessons are all available online: `https://github.com/team5735/SoftwareTrainingDocs`
 
-A coded Subsystem is often defined as owning electrical components that only it is intended to use. Frequently these components are motors or sensors, though Subsystems can represent abstract things such as lighting or vision. Any component with logic behind it will have a relevant Subsystem. Within the code for each subsystem we will typically define a set of Commands for that Subsystem, gating access of the inner components except for through these Commands. Only one Command can ever require a given Subsystem, to run another with the same Subsystem would require ending the previous Command. 
+If you'd like to save that link, you can type it into your browser right now and bookmark it.
 
-It is through these self-imposed restrictions of Command-Based that we are able to construct a robot with minimal potential for error, that we are able to more efficiently consider whence problems may arise.
-
-## The Subteam
-
-Almost every FRC team has some aspect of software. Whether an entire subteam, a few dedicated members, or simply one specialist, there must be a way for the team to code their robot. On the Control Freaks, we define Software as a subteam, with a separate knowledge base and training system from Mechanical or Electrical.
-
-Every year for Software has been an uphill battle against disorganization (as most things are), and this year we hope to make monumental progress in said fight. Software will begin on the 21st, splitting off for a series of lessons intended to thoroughly explain the various systems in the Robot and how we use them, before rejoining for  offseason projects, hopefully around the same time Mechanical/Electrical training ends.
-
-When working on projects, the hope is to have a less subteam-oriented process, instead having Software members work alongside specific groups on subsystems and other robot parts. Software would still meet for brief stand-up meetings about once  a week, possibly more frequently during practice, to discuss issues and share progress. The overall intent is to completely reintegrate Software members after training, to prevent the subteam divide that has been present in the past.
-
-## Outro
-
-The environment of Software this year is intended to be more individual-oriented, while still being one where collaboration is welcome when help is needed. Software will always be an iterative process, and criticism is always welcome.
-
-Software training will begin soon, and we hope to see some of you there; it takes a smidge more ambition than mechanical. All jokes aside though, make whatever choice makes you most happy, for anything involving robotics can beget a strong and successful career.
-
-Thank you all so much for listening to this exposition, any questions are welcome, though I expect mechanical is itching to start today's activity.
+To find the lesson documents themselves, go to the lessons folder and click on any file.

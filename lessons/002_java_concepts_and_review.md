@@ -1,108 +1,104 @@
-# Java Review & New Concepts
-
-> This lesson should go over the basics of Java syntax and organization, **as a review**, then introduce some new concepts, ones that we use frequently for WPILib. Overall, this should take 30-60 minutes
+# Java concepts and review
 
 ## Intro
 
-We all know something of Java, and today we will guarantee that the core knowledge base is still lingering in your mind. Whether you are actively learning or knew it three years ago, today's lesson should get those gears working again.
+Welcome to Java! If you've taken APCSA or otherwise know Java, this will be a review- feel free to tune us out until we get to the cooler stuff. If you're otherwise familiar with programming, I again apologize but we have to get everybody on the same page. If not, or if you're currently taking it, don't worry! We'll walk you through it step-by-step. If this lesson isn't enough, you can learn as you go and/or find a guide online to get you started. Remember, you can always go back and look at this document.
+And if you'd like to play with some code, you can mess around in the example repository that we cloned last time.
 
-In addition, we will learn some new Java features today, some that the College Board (yuck) decided to omit from the APCSA curriculum, though overall they should not be too complicated.
+We'll also cover some cool Java features that you might not have seen before. These work nicely with WPILib to help us write better code.
 
-## Java, Line-By-Line
+## The Building Blocks of Java
 
-Java has variables, declared, and such. The two main data types are **Primitives** and **Objects**. 
+At its core, Java is all about **variables**. A variable is just a container for a piece of information. There are two main types of variables:
 
-A **Primitive** is one which can be represented by one, unchanging data value. Functionally this means that it is stored differently than its counterpart, though this doesn't matter beyond understanding that Primitives are nicer to your computer and should be used when applicable. The three main Primitive types in Java are:
+**Primitives:** These are relatively simple and small in number.
 
-1. int - a simple number, no decimals, can be positive or negative
-2. double - a number, can be positive or negative, but with decimals!
-3. boolean - a true/false value (stored by your computer as only one bit, zero or one for true or false)
-4. char - a character, such as letters, symbols, or digits (0-9), a group of these are combined to form Strings (we don't really care about char)
+* `int`: A whole number (e.g., 1, -5, 100).
+* `double`: A number with a decimal point (e.g., 3.14, -0.5).
+* `boolean`: Either true or false.
+* `char`: A single character (e.g., 'a', '!', '7').
 
-An **Object** is a sophisticated data type, and it stores multiple data values (Primitives or more Objects) within it. All Objects belong to a class type, of which you could create infinite! Some examples of classes (Object types) are:
+**Objects:** These are more complex data types with their own capabilities.
 
-- Arrays - an ordered set of values, all of one type, with a fixed length
-- ArrayLists - an ordered set of values, all of one type, but with variable length and other features
-- String - an ordered list of characters, effectively a fixed-length Array of characters, but one that can be used for many operations
+* `String`: A sequence of characters (e.g., "Hello, world!").
+* `Array`: A fixed-size list of items of the same type.
+* `ArrayList`: A resizable list of items of the same type.
+* ... and many, many more ...
 
-You may notice that primitive types are written in all lowercase, whereas Objects start with a capitalized letter. Specifically, they are written in CamelCase, meaning that every word has its first letter capitalized and no spaces are employed. Functionally, these capitalization differences are meaningless, but it can be useful to remember such things, as they let you tell the difference in confusing situations.
+> [!TIP]
+> Notice how primitive types are all lowercase, while object types start with a capital letter? That's a handy way to tell them apart!
 
-## Within a Class
+## A Class Act
 
-Classes tend to follow a basic pattern, allowing for easily reading through to find functionality.
+In Java, all of our code lives inside of **classes**. A class, most succinctly, represents something. Here's the typical structure of a class:
 
-### Instance Variables
+* **Instance Variables:** These are variables that belong to the class itself. They're usually declared at the top of the class.
+* **Constructors:** A constructor is a special method that gets called when you create a new object from the class. It's like the object's setup wizard.
+* **Methods:** Methods are the actions that an object can perform. They're like the object's special abilities.
 
-An **instance** variable is a value stored within the class, accessible from anywhere within the class, and generally beyond. Specifically, the word **private** before the variable's declaration will make it only accessible to the Class, whereas **public** lets the variable be accessed pretty much anywhere.
+## Like Father, Like Son: Inheritance
 
-Instances are generally placed first in the class's lines.
+**Inheritance** is a fancy word for a simple idea: you can create a new class that's based on an existing class. The new class (the "subclass") inherits all the methods and variables of the original class (the "parent class").
 
-### Constructors
+This is super useful because it lets us reuse code and create specialized versions of our classes.
 
-**Constructors** are methods that return the *same type* as the class they are in and *do not have a unique name*. They can take parameters or not. They tend to come after instance variables but before other methods.
+## New Tools for Your Toolbox
 
-### Methods
+If you were tuning us out, now's the time to listen up. These aren't covered in your average APCSA course, but are more common in other languages.
 
-**Methods** are Java's effective functions, belonging to a given class. They will have an access level (public or private for most cases), a return type, and any parameters. A return type is simply the data type that the method will return, or `void` meaning that the function will not return any data. Parameters are data values given to the method, and can be referenced from within the method, often determining the returned value.
+### `static` and `final`
 
-## Inheritance
+These are special keywords that you can add to a variable.
 
-**Inheritance** is the big spooky word of APCSA, but it shouldn't be too much to worry about. Simply put, inheritance lets you create different classes based off of a pre-existing class, giving them all the same methods of the "parent". Because these "sub-classes" have all the data of their parents, they can be treated as belonging to the parent class, letting us use them in place of the parent. 
+* `static`: A `static` variable is shared by all instances of a class. It's like a global variable for that class.
+* `final`: A `final` variable can only be assigned a value once. It's a constant.
 
-On a line-by-line basis, parent methods can be overwritten to give new functionality in a subclass, provided that they have the same name, return type, and parameter type/order.
+> [!IMPORTANT]
+> We usually write `final` variable names in all caps, with underscores to separate words (e.g., `MAX_SPEED`).
+> You can find other conventions like this in style-guide.md in the main folder of this repository.
 
-## New Things
+### Enums: The Picky Eater's Best Friend
 
-Ok, review over, time to really learn some new stuff (unless you already learned some of this, or they updated the APCSA curriculum).
+An **enum** is a special type of class that lets you define a set of constant values. It's perfect for when you have a limited number of options for something.
 
-### Static and Final
+For example, you could use an enum to represent the different states of a shooter: `IDLE`, `SPINNING_UP`, `READY_TO_SHOOT`.
 
-These two are simple, they are modifiers placed before a variable, similar to public/private. `static` will make it so that the variable will not change across different instances of the class, meaning that it is tied to the class file itself, not the objects belonging to the class. `final` simply means that a data value will never change, and should be relatively straightforward.
+### Lambda Functions: The Cool Kid on the Block
 
-When accessing a `public static` variable, the syntax is `FileName.variableName`, though we tend to write it as `FileName.VARIABLE_NAME` because its cooler and lets us differentiate how values are used (this will be elaborated on next lesson).
+**Lambda functions** (or "lambdas" for short) are like mini-methods that you can create on the fly. They're a concise way to write code that you only need to use once.
 
-### Enums
+The main conceptual leap with lambdas is that you can treat them as objects. Here's some example code that *might* help, but it's no problem if it doesn't:
 
-An enum is basically a class, but with pre-saved instances of that class. They are useful when tracking limited options that are greater than two, where a boolean simply would not work, and where using an int for identification could lead to errors. Syntactically, basic enums are declared as such:
+```java
+// (inside a class)
+void runYourLambda(Runnable fun) {
+    System.out.println("running!");
+    fun.run();
+    System.out.println("done!");
+}
 
-	public enum Thing{
-		VERSION1,
-		VERSION2,
-		VERSION3;
-	}
- 
-where each version is in all caps, separated by commas, and ended by a semicolon. Enums can also have instance fields, and constructors. When an enum has a constructor with parameters, its versions must be followed by parameters for said constructor:
+void lambdasAreObjects() {
+    runYourLambda(() -> System.out.println("Lamdba 1!"));
+    System.out.println("Ok, running the second lambda now");
 
-	public enum BetterThing{
-		VERSION1(35),
-		VERSION2(42),
-		VERSION3(9000);
-	
-		public int coolNum;
-		
-		Betterthing(int coolNum){
-			this.coolNum = coolNum;
-		}
-	}
+    int myNumber = 10;
+    runYourLambda(() -> {
+            System.out.println("This lambda runs basically any code it would like.");
 
-Each version is effectively its own call to the constructor, storing a unique instance while saving its name also. Note that the enum constructor does not generally have public or private in front of it, and that enum type names are capitalized and in CamelCase.
+            System.out.println("The number I'm holding is " + myNumber);
+            System.out.println("Let me square that: " + myNumber * myNumber);
+    });
+}
+```
 
-### Lambda Functions
+Don't worry if this sounds confusing at first. You'll get the hang of it as you see it in action. Remember that you can always come back to this code and try to understand it more. If you need somebody else to explain it, the internet or your favorite AI will be happy to oblige.
 
-Ok, this name sounds scary and cool, but really these are only the latter. **Lambda Functions** are functions (similar to methods) that can be used like Objects (because they are). They are sometimes called "Anonymous Functions" because they don't have a name.
+### Interfaces: The Rule-Makers
 
-The best way to explain a Lambda Function is by example, so here is an excerpt from the 2024 robot code (also on the Sample Codebase, in AngleSubsystem.java)
+An **interface** is like a contract for a class. It defines a set of methods that a class must have, but it doesn't say how those methods should work. It's up to the class to provide the implementation.
 
-	FactoryCommands.runOnceUntil(
-		    ()  -> setSetpoint(angle),  ()  -> isAtPosition(angle)
-		);
-	
-In this case, `FactoryCommands.runOnceUntil()` is defined as taking a `Runnable` and a `Supplier<Boolean>`.  A Runnable is a type of Lambda Function, which takes no parameters and one expression, a block of code that can be run. Our syntax reflects that, where `() ->` represents any parameters in the parenthesis, as we would with a real method, and the arrow leading to the actual expression, here `setSetpoint(angle)`, a generic void method taking in some parameter `angle`. A `Supplier` is similarly parameterless, but instead of an action to be executed, its code block must have a return, whatever data type is placed between the `<>` in its type declaration. In our case this is a boolean, meaning that we must give it code that returns a boolean, here the method `isAtPosition(angle)`, which is a method that will return true/false, or a boolean returning method.
+Interfaces are a great way to make sure that different classes have a consistent set of abilities.
 
-If we instead wanted to create new code exclusively for this situation, we could have written `() -> { new code }` where the curly brackets represent the function of the lambda.
+A good example of an interface is the Subsystem interface from WPILib. If a class `implements Subsystem`, then we know we can treat it as a Subsystem because it's said that that's what it is.
 
-This may all be a little confusing as, but as you work with lambdas in code, you should hopefully build a sufficiently advanced understanding of them, for there is not much more to them than what has been here outlined. 
-
-### Interfaces
-
-An interface is thankfully simple, after the complexity of a lambda. Interfaces are general types, which must be "implemented", just like a class would be extended, though a class can implement multiple interfaces. An interface can have instances variables and methods, just like a class, but these **do not need to contain code or values**. What an interface does, then, is guarantee certain methods and data values will be in its implementations, though it says nothing about what those methods will do. 
+At pain of dying by repetition, I'll say again that you can find these lesson documents at `https://github.com/team5735/SoftwareTrainingDocs`.

@@ -1,18 +1,16 @@
-# Basic Motor Control
+# Motors: Making Things Move
 
-> This lesson will be very hands-on. The goal is to get everyone comfortable with controlling motors and reading from the encoders.
+> This is where the fun begins! In this lesson, we'll learn how to control motors, the muscles of our robot. This will be a hands-on lesson, so get ready to make some sparks fly (not literally, of course).
 
-## Introduction
+## The Brains Behind the Brawn
 
-Motors are the muscles of our robot. They are what allow us to drive, shoot, and manipulate game pieces. In this lesson, we'll learn how to control motors using WPILib.
+To control a motor, we need a **motor controller**. This is a small electronic device that sits between the RoboRIO and the motor. It takes a signal from the RoboRIO and translates it into the power that makes the motor spin.
 
-## Motor Controllers
+On our team, we use the **REV Robotics SPARK MAX** motor controller. It's a powerful and versatile controller that's perfect for FRC.
 
-To control a motor, we need a motor controller. A motor controller is a small electronic device that takes a signal from the RoboRIO and uses it to control the speed and direction of a motor. There are several different types of motor controllers that are legal for FRC use, but on our team, we primarily use the REV Robotics SPARK MAX.
+## Your First Motor Subsystem
 
-## Creating a Motor Subsystem
-
-As we learned in the previous lesson, we use subsystems to organize our code. Let's create a simple subsystem for a single motor.
+Let's create a simple subsystem to control a single motor. As we learned in the last lesson, a subsystem is a class that represents a part of the robot. Here's what a basic motor subsystem looks like:
 
 ```java
 package frc.robot.subsystems;
@@ -36,13 +34,17 @@ public class MotorSubsystem extends SubsystemBase {
 }
 ```
 
-In this subsystem, we have a single `CANSparkMax` motor controller. The constructor initializes the motor with the CAN ID from our `Constants.java` file. The `setSpeed` method sets the speed of the motor. The speed is a value between -1.0 and 1.0, where 1.0 is full speed forward and -1.0 is full speed reverse.
+Let's break this down:
 
-## Reading from Encoders
+* We have a `CANSparkMax` object called `motor`.
+* In the constructor, we create a new `CANSparkMax` object and give it the CAN ID from our `Constants.java` file.
+* The `setSpeed()` method takes a `double` between -1.0 and 1.0 and sets the speed of the motor.
 
-Most motors that we use in FRC have built-in encoders. An encoder is a sensor that measures the rotation of the motor shaft. This is incredibly useful for controlling the position of our mechanisms.
+## Encoders: The Motor's Sixth Sense
 
-Let's add a method to our `MotorSubsystem` to read the encoder position.
+Most of the motors we use have a built-in **encoder**. An encoder is a sensor that tells us how far the motor has spun. This is incredibly useful for controlling the position of our mechanisms.
+
+Let's add a method to our subsystem to read the encoder position:
 
 ```java
 // ... inside the MotorSubsystem class ...
@@ -52,7 +54,7 @@ public double getPosition() {
 }
 ```
 
-The `getPosition()` method returns the position of the motor in rotations. We can also get the velocity of the motor in RPM (rotations per minute).
+This method returns the position of the motor in rotations. We can also get the velocity of the motor in RPM (rotations per minute):
 
 ```java
 // ... inside the MotorSubsystem class ...
@@ -62,9 +64,9 @@ public double getVelocity() {
 }
 ```
 
-## Resetting the Encoder
+## Hitting the Reset Button
 
-Sometimes, we need to reset the encoder to zero. For example, we might want to reset the encoder on our arm mechanism when it is at its home position. We can do this by adding a method to our subsystem.
+Sometimes, we need to reset the encoder to zero. For example, we might want to do this when our arm is in its home position. We can add a method to our subsystem to do this:
 
 ```java
 // ... inside the MotorSubsystem class ...
@@ -74,6 +76,6 @@ public void resetEncoder() {
 }
 ```
 
-## Conclusion
+## Let's Get Building!
 
-In this lesson, we've learned how to control motors and read from encoders. We've also seen how to create a simple motor subsystem. In the next lesson, we'll learn how to use sensors to get input from the world around us.
+Now that you know the basics of motor control, it's time to put your knowledge to the test. In the next lesson, we'll learn how to get input from the world around us using sensors.

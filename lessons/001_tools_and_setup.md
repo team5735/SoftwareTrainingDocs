@@ -1,6 +1,6 @@
 # Tools and Setup
 
-Welcome, new Software members! If you weren't here last lesson, you can read it [here](https://github.com/team5735/SoftwareTrainingDocs/blob/main/lessons/000_intro_to_software.md). Today we will download and prepare various tools on your MacBooks.
+Welcome! If you weren't here last lesson, you can read it [here](https://github.com/team5735/SoftwareTrainingDocs/blob/main/lessons/000_intro_to_software.md). Today we will download and prepare various tools on your MacBooks.
 
 This lesson is easier to follow if you have the Markdown version open in your browser. The easiest way to go there is to type the following into your browser's address bar exactly:
 `github.com/team5735/SoftwareTrainingDocs`

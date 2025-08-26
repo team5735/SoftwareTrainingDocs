@@ -1,53 +1,34 @@
-# WPILib Project Structure and Robot Life Cycle
+# Robot Lifecycle
 
-> This lesson should take about an hour and will walk through the anatomy of a WPILib robot project.
+## A Place for Everything
 
-## Introduction
+When you open up our robot code, there are a lot of files and folders, but 90% of your time will be spent within `src/main/java/frc/robot`.
 
-Now that we have our tools set up and understand the basics of Git, it's time to dive into the actual code that makes the robot go. In this lesson, we'll explore the structure of a WPILib project and the life cycle of a robot program.
+* **`Robot.java`**: This runs the command-based framework.
+* **`RobotContainer.java`**: This is where we set up all our subsystems and commands and bind buttons.
+* **`subsystems/`**: Subsystem classes. Generally one exists for each discrete part of the robot.
+* **`commands/`**: Command classes. In production code, this is mostly larger commands and more complex tasks.
+* **`constants/`**: Constants files. Generally one exists for each subsystem.
 
-## Project Structure
+## The Circle of Life
 
-When you create a new WPILib project, you'll see a bunch of files and folders. Here's a rundown of the most important ones:
+The `Robot.java` file has a bunch of methods that get called at different times. This is the robot's **lifecycle**.
 
-*   **`build.gradle`**: This file is used by Gradle, the build tool we use to compile and deploy our code. You'll rarely need to touch this file.
-*   **`.vscode/`**: This folder contains settings for Visual Studio Code, our code editor.
-*   **`src/main/java/frc/robot/`**: This is where all of our Java code lives.
-    *   **`Constants.java`**: This file holds all of the constants for our robot, such as motor CAN IDs, sensor channels, and PID values.
-    *   **`Main.java`**: This is the main entry point for our robot program. You will likely never need to modify this file.
-    *   **`Robot.java`**: This is the main class for our robot. It contains the robot's life cycle methods.
-    *   **`RobotContainer.java`**: This class is responsible for creating and managing our subsystems, commands, and button bindings.
-    *   **`commands/`**: This folder contains all of our command classes.
-    *   **`subsystems/`**: This folder contains all of our subsystem classes.
+Generally, you don't need to worry about this too much - all they do is setup and manage the command-based system - but it's good to know what's happening.
 
-## The Robot Life Cycle
+* **`robotInit()`**: Called when you first turn on the robot.
+* **`robotPeriodic()`**: Called every tick (20ms) while the robot is running (runs the execute method of commands).
 
-The `Robot.java` file contains several methods that are called at different times during the robot's operation. These methods make up the robot's life cycle.
+Equivalent methods exist for disabled, autonomous, and teleop, but these two are always run.
 
-*   **`robotInit()`**: This method is called when the robot program is first started. This is where you should create your `RobotContainer` and do any other one-time initialization.
-*   **`robotPeriodic()`**: This method is called every 20ms, regardless of the robot's mode (disabled, autonomous, or teleoperated).
-*   **`disabledInit()`**: This method is called once when the robot enters disabled mode.
-*   **`disabledPeriodic()`**: This method is called every 20ms while the robot is in disabled mode.
-*   **`autonomousInit()`**: This method is called once when the robot enters autonomous mode.
-*   **`autonomousPeriodic()`**: This method is called every 20ms while the robot is in autonomous mode.
-*   **`teleopInit()`**: This method is called once when the robot enters teleoperated mode.
-*   **`teleopPeriodic()`**: This method is called every 20ms while the robot is in teleoperated mode.
-*   **`testInit()`**: This method is called once when the robot enters test mode.
-*   **`testPeriodic()`**: This method is called every 20ms while the robot is in test mode.
+## The `RobotContainer`: Your Robot's Mission Control
 
-It's important to understand this life cycle so that you know where to put your code. For example, if you want to run a command at the beginning of the autonomous period, you would schedule it in the `autonomousInit()` method.
+RobotContainer, when constructed, sets up controller buttons to map to certain commmands, creates subsystems, and more.
 
-## `RobotContainer.java`
+By keeping all of this logic in one place, you'll make your code more organized and easier to understand.
 
-The `RobotContainer.java` class is where we bring everything together. In the constructor of this class, we will:
+It's declarative, which is a style of coding that basically means you write code like 'when button A is pressed, run command X' instead of checking for A being pressed every tick.
 
-1.  Create instances of our subsystems.
-2.  Create instances of our commands.
-3.  Create button bindings to link our commands to controller buttons.
-4.  Create an autonomous command to run during the autonomous period.
+## What's Next?
 
-By keeping all of this logic in one place, we can make our code more organized and easier to understand.
-
-## Conclusion
-
-In this lesson, we've learned about the structure of a WPILib project and the life cycle of a robot program. We've also seen how the `RobotContainer.java` class is used to bring everything together. In the next lesson, we'll start writing some code to control motors.
+Now that you know the lay of the land, it's time to start building! In the next lesson, we'll get our hands dirty and learn how to control motors.

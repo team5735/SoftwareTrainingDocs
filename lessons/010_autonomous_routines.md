@@ -10,10 +10,10 @@ In the first 15 seconds of an FRC match, the robot operates autonomously, withou
 
 A command group is a command that is made up of other commands. Command groups are a powerful tool for creating complex autonomous routines. WPILib provides several types of command groups:
 
-*   **`SequentialCommandGroup`**: Runs a list of commands in sequence. The next command in the list will not start until the previous command has finished.
-*   **`ParallelCommandGroup`**: Runs a list of commands at the same time. The command group will finish when all of the commands in the list have finished.
-*   **`ParallelRaceGroup`**: Runs a list of commands at the same time. The command group will finish as soon as any of the commands in the list finishes.
-*   **`ParallelDeadlineGroup`**: Runs a list of commands at the same time. The command group will finish when a specific command (the deadline) finishes.
+* **`SequentialCommandGroup`**: Runs a list of commands in sequence. The next command in the list will not start until the previous command has finished.
+* **`ParallelCommandGroup`**: Runs a list of commands at the same time. The command group will finish when all of the commands in the list have finished.
+* **`ParallelRaceGroup`**: Runs a list of commands at the same time. The command group will finish as soon as any of the commands in the list finishes.
+* **`ParallelDeadlineGroup`**: Runs a list of commands at the same time. The command group will finish when a specific command (the deadline) finishes.
 
 By combining these command groups, we can create complex and precise autonomous routines.
 

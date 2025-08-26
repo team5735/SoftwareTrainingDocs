@@ -14,9 +14,9 @@ PID stands for Proportional, Integral, and Derivative. It is a control algorithm
 
 Let's break down the three parts of PID:
 
-*   **Proportional (P)**: The P term is proportional to the error, which is the difference between the setpoint and the current sensor reading. The larger the error, the larger the P term. This is the main driving force of the PID controller.
-*   **Integral (I)**: The I term is proportional to the accumulated error over time. The I term is used to correct for small, steady-state errors that the P term alone cannot fix.
-*   **Derivative (D)**: The D term is proportional to the rate of change of the error. The D term is used to dampen the response of the PID controller and prevent it from overshooting the setpoint.
+* **Proportional (P)**: The P term is proportional to the error, which is the difference between the setpoint and the current sensor reading. The larger the error, the larger the P term. This is the main driving force of the PID controller.
+* **Integral (I)**: The I term is proportional to the accumulated error over time. The I term is used to correct for small, steady-state errors that the P term alone cannot fix.
+* **Derivative (D)**: The D term is proportional to the rate of change of the error. The D term is used to dampen the response of the PID controller and prevent it from overshooting the setpoint.
 
 By tuning the three constants (kP, kI, and kD), we can create a PID controller that is fast, accurate, and stable.
 
