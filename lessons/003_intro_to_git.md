@@ -2,59 +2,103 @@
 
 This is meant to go along with the git slides you can find in the team Google Drive folder, assuming I've done my job.
 
-## What is this "Git" Thing, Anyway?
+The goal of this presentation is giving you a primer so that when you hear these terms again you aren't completely lost and hopefully even remember what they mean.
 
-Imagine you're writing an essay. You write a draft, then another, and another. What if you want to go back to a previous version? That's where a **version control system** comes in. And for programmers, the version control system of choice is **Git**.
+## The purpose of version control
 
-Git is like a time machine for your code. It lets you:
+* History
+* Undo safety
+* Collaboration
+* Structure
+* Stability
 
-* Track changes to your files.
-* Go back to previous versions of your code.
-* Collaborate with other people on the same project without stepping on each other's toes.
+----------
 
-### And What About GitHub?
+Essentially, version control is a way of keeping track of a history of changes. Think of it as an advanced, professional version of Version History in Google Docs, but upgraded to multiple timelines and much nerdier.
 
-If Git is the time machine, then **GitHub** is the time machine factory. It's a website where you can store your Git projects (which we call **repositories**). It's like Google Drive for your code, but with a bunch of extra features for programmers.
+## Definitions
 
-> **Key takeaway:** Git is the tool, GitHub is the website where we use the tool.
+* The code: a bunch of java-language files
+* Git repository: a directory (folder) containing the code and a .git directory that is used by git to manage the history of the repository (the existence of .git makes it a repository)
+* Example repository structure for FRC
+    - .git
+        - Handles internals for git
+    - src/main/java/frc/robot
+        - RobotContainer.java
+        - subsystems/
+        - ...
+* Clone: a local copy of a git repository (here, that’s either on your school laptops or on the team laptops)
+* Remote: the "master copy" of a repository. It's the version that GitHub hosts. Syncing between computers involves communicating with the remote.
+* Commit: a specific version of the repository, represented as a set of changes to the previous version
+* The working tree: the technical name for the code. It’s basically everything not in .git
+* The staging area: a list of files that git will make a commit for when you tell it to (with git commit). This can be used to not commit all of the changes you’ve made at once
+* HEAD: another way to say 'the commit that represents the files actively in the repository that you can edit'
+* The stash: essentially a temporary commit that lets you undo a lot of changes safely, set them aside, and then redo them later
 
-## Your First Repository
+## A typical git project structure
 
-A **repository** (or "repo" for short) is just a fancy word for a project that's being tracked by Git. It's a folder with all of your code, plus a special hidden folder where Git keeps track of all the changes.
+The slide shows a circle for the remote with multiple 'clones' pointing to the circle. The arrows represent that the clones are connected to the remote and know how to interact with it. They're one-way because the remote never forces changes onto the clones, but the clones force changes and request information from the remote.
 
-When we work on a project as a team, everyone has their own copy of the repo on their computer. You can make changes to your copy, and then "push" those changes to the main repo on GitHub so that everyone else can see them. You can also "pull" changes from the main repo to get the latest updates from your teammates.
+### Quickly being petty
 
-This is how we all stay in sync and work together on the same codebase.
+GitHub and Git aren't the same thing. GitHub hosts the repositories using the git software. git is the software that manages the version control, communicates between clones and remotes, and generally does the actual version control work.
 
-## Commits: The Building Blocks of History
+## Git history
 
-A **commit** is a snapshot of your code at a specific point in time. Every time you make a change to your code, you can "commit" that change. This creates a new snapshot in your project's history.
+### A simple linear history
 
-Think of it like saving your progress in a video game. Each commit is a save point that you can go back to if you mess something up.
+```
+A <── B <── C <── D <── E <── F
+```
 
-### Making a Commit
+Each letter is a commit. They represent a snapshot in time, manually captured, and stored as a set of changes to the previous commit. For example, B might add a line, C might replace that line with another, and D might delete the file the previous two commits modified entirely.
 
-To make a commit, you need to do two things:
+In this diagram, F can be assumed to be HEAD, representing the files that you're currently working on.
 
-1.  **Stage your changes:** This is where you tell Git which files you want to include in the commit.
-2.  **Commit your changes:** This is where you actually create the snapshot and add a message describing what you changed.
+The programmer made changes and committed - essentially saved - those changes sequentially. This is the simplest type of timeline (linear).
 
-## Merging: When Worlds Collide
+We can go back in time to a specific snapshot, again like Google Docs' version control (but you need to make manual snapshots) with the power of `git checkout`.
 
-So what happens when you and a teammate both make changes to the same file at the same time? This is called a **merge conflict**, and it's a normal part of working with Git.
+### One developer using git
 
-When you have a merge conflict, Git will tell you that it can't automatically merge the changes. It's up to you to look at the two sets of changes and decide which one to keep (or how to combine them).
+Let's paint a picture of one developer using git to keep track of their project over time in perfect solitude. You don't even need a host like GitHub for this- due to what's present in a repository, git doesn't even need a remote to operate, nor does it need one single remote, but more complex things with remotes are out of scope for this course. (Fun fact: remotes are actually just normal repositories, often with their working trees disabled, because nobody at GitHub is going to be working on our code, so they don't need to see it; all the need is the commit history.)
 
-Don't worry, it's not as scary as it sounds! VS Code has a great tool for resolving merge conflicts that makes it easy to see what's going on.
+We start with one commit A, called the initial commit because that's what it is:
 
-## When Git Gets Mad
+```
+A
+```
 
-Sometimes, Git will give you an error message that looks like a bunch of gibberish. Don't panic! The error messages usually tell you what's wrong and how to fix it.
+Simple enough. Imagine that this commit represents a template FRC project, say it has RobotContainer.java, a few example Commands, Subsystems, and so on.
 
-The most common error you'll see is when you try to push your changes to a repo that has new changes that you don't have yet. Git will tell you to `git pull` first to get the latest changes. This is Git's way of making sure you don't accidentally overwrite someone else's work.
+Ok, now our developer wants to add a simple motor subsystem. They write this code:
 
-## What Now?
+```java
+// ... skip imports ...
+public class MotorSubsystem extends Subsystem {
+    private final CANSparkMax motor = new CANSparkMax(Constants.MOTOR_ID, MotorType.kBrushless);
 
-You now know enough about Git to be dangerous! You can write code, commit it, and push it to a repository. You also know how to handle the most common Git issues.
+    private void set(Voltage volts) {
+        motor.setVoltage(volts.in(Volts));
+    }
 
-In the next lesson, we'll talk about **branches**, which are a powerful tool for working on new features without breaking the main codebase.
+    public Command getSetVoltage(Voltage volts) {
+        return startEnd(() -> set(volts), () -> set(Volts.of(0)));
+    }
+}
+```
+
+... and then commit their changes, whether that be with the VSCode GUI or with git commands.
+
+(The git commands would look like:
+  - Stage all files: `git add .` (in the project root)
+  - Commit staged files: `git commit -m "added MotorSubsystem"`
+)
+
+Now, the history looks like this:
+
+```
+A <── B
+```
+
+Did you spot the bug? If so, congrats.
