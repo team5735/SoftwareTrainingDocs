@@ -128,9 +128,24 @@ double projectileSpeedMPS = projectileSpeed.in(MetersPerSecond);
 ```
 
 You can pass these around as normal values, and the expected operations work on them:
-    - `a.plus(b)` is the same as `a + b`
-    - `a.minus(b)` is the same as `a - b`
-    - `a.times(b)` is the same as `a * b`
-    - `a.div(b)` is the same as `a / b`
-    - `a.unaryMinus()` is the same as `-a`
-Other than math looking different and their automatic conversions and them not being primitives, you can treat them as just numbers.
+
+- `a.plus(b)` is the same as `a + b`
+- `a.minus(b)` is the same as `a - b`
+- `a.times(b)` is the same as `a * b`
+- `a.div(b)` is the same as `a / b`
+- `a.unaryMinus()` is the same as `-a`
+
+And there's one last thing you should know: to compare two `Measure`s (`LinearVelocity` is officially a `Measure`) you have to do this:
+
+```java
+// (using our speeds from earlier)
+if (robotSpeed.compareTo(shotSpeed) > 0) {
+    System.out.println("The robot is faster than the shot.");
+} else if (robotSpeed.compareTo(shotSpeed) < 0) {
+    System.out.println("The robot is slower than the shot.");
+} else if (robotSpeed.equals(shotSpeed)) {
+    System.out.println("The robot is the same speed as the shot.");
+} else {
+    System.out.println("This shouldn't happen.");
+}
+```
