@@ -102,3 +102,35 @@ Interfaces are a great way to make sure that different classes have a consistent
 A good example of an interface is the Subsystem interface from WPILib. If a class `implements Subsystem`, then we know we can treat it as a Subsystem because it's said that that's what it is.
 
 At pain of dying by repetition, I'll say again that you can find these lesson documents at `https://github.com/team5735/SoftwareTrainingDocs`.
+
+## Units
+
+Units are a relatively new feature in WPILib, but they're very welcome. They let us write safer code - that means code that's harder to make mistakes with - by using the type system in Java to automagically convert between units as needed.
+
+There are a few types of unit classes. Assuming you're set up correctly, you should be able to use them without issue, as long as you autocomplete the unit names.
+
+Each unit has two (sometimes more) classes associated with it. To help explain units, take the example of meters per second. `MetersPerSecond` defines what a meter per second is, and you use it to construct the associated type of `LinearVelocity`. (Technically, `MetersPerSecond` is a constant of type `LinearVelocityUnit`.)
+
+How do we use them? It's simple:
+
+```java
+// robotSpeed represents 1.0 m/s
+LinearVelocity robotSpeed = MetersPerSecond.of(1.0);
+
+// shotSpeed represents 2.0 ft/s
+LinearVelocity shotSpeed = FeetPerSecond.of(2.0);
+
+// WPILib automatically converts units for us. The resulting value doesn't really
+// have a defined unit ...
+LinearVelocity projectileSpeed = shotSpeed.plus(shotSpeed);
+// ... but we can ask for it as a `double` in a specific unit:
+double projectileSpeedMPS = projectileSpeed.in(MetersPerSecond);
+```
+
+You can pass these around as normal values, and the expected operations work on them:
+    - `a.plus(b)` is the same as `a + b`
+    - `a.minus(b)` is the same as `a - b`
+    - `a.times(b)` is the same as `a * b`
+    - `a.div(b)` is the same as `a / b`
+    - `a.unaryMinus()` is the same as `-a`
+Other than math looking different and their automatic conversions and them not being primitives, you can treat them as just numbers.
