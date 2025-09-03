@@ -10,26 +10,30 @@ Then, click on the `lessons` folder, followed by `001_tools_and_setup.md` (this 
 
 WPILib, developed at WPI, is a package of most necessary tools for FRC programming. It comes with VSCode, various Java APIs, and many additional programs that we will explore in the future. For now, it should be a quick install, all in one folder. It's what we'll use instead of IntelliJ, if you took APCSA. If you're advanced enough to have something else you prefer, you still need to install this.
 
-1. Follow [this link](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) (or search "WPILib Install" and click the first link).
-2. Press the big blue "Downloads" button about one screen down the page. If this opens a new tab, then scroll down and click the link that ends in 'Mac (Arm)'.
-4. Open the downloaded file however you'd like. On some browsers it shows up in the top right and you can click it while downloading, and the browser will open it when it's downloaded. If your browser doesn't feel like cooperating today, you can find it in your Downloads folder (open Finder and find it on the left).
-5. This should open a new Finder-looking window. Drag the app named WPILibInstaller and the other zip-like file contained in the .dmg (disk image) onto your desktop. It should take a moment or two to copy; they're sizable.
-6. On your desktop you should find a silver drive-looking file confusingly called WPILibInstaller. Drag that into the Trash (or right-click it with two fingers and select 'Eject "WPILibInstaller"'). Make sure you're doing this with the silver drive and not the red-and-black-with-a-W-on-it application.
-7. Open the new "WPILibInstaller" application (it should be the only thing named that that's new to your desktop) by double-clicking it, then selecting "Open" and "Allow" when your computer gives popups.
-8. In the window opened by the installer, select "Start," "Everything" (should be selected), "Install for this User," and "Download for this computer only," in that order.
-9. Wait for VSCode to install. It should take a few seconds.
-10. Click "Next" once VSCode is downloaded (the window should say "Done Downloading") and wait for other installations to finish. This should take 'a hot second'. Then click "Finish" when prompted.
-11. Select the file named "Visual Studio Code" in the folder that was opened and either drag it to the Desktop **while holding Option** to **make a shortcut** or drag it to your Dock. This is so you don't have to finder it again. You can rename the one on your desktop if you'd like. ***THE APP ITSELF MUST STAY WHERE IT IS!!!!!***
-13. You can drag anything left over from this process into the Trash, including the installer and the artifacts gzipped tape archive (a very fancy git) (but obviously not the app we just worked so hard to install).
-14. Open the VSCode application and check for a little red and black "w" symbol around the top right. If you do not see one, **DOUBLE CHECK THAT YOU COMPLETED STEP 11 CORRECTLY**, if not, just make sure that the application goes back into the `vscode` folder in the `wpilib` directory: it's important where it is located.
+1. Follow [this link](https://github.com/wpilibsuite/allwpilib/releases/latest) 
+2. Scroll down and click the link that ends in 'Mac (Arm)'.
+3. Open the downloaded file. It's large, so get ready to wait for the download.
+4. This should open a new window. Drag the app named WPILibInstaller and the other zip-like file contained in the .dmg (disk image) onto your desktop.
+.5 Open the new "WPILibInstaller" application (it should be the only thing named that that's new to your desktop) by double-clicking it, then selecting "Open" and "Allow" when your computer gives popups.
+6. In the window opened by the installer, select "Start," "Install for this User," and "Download for this computer only" as the buttons appear.
+7. Wait for VSCode to install. It should take a few seconds.
+8. Click "Next" once the first progress bar is finished and wait for other installations to finish. This will take some time. Click "Finish" when it's done.
+9. A Finder window should open. Drag the file named Visual Studio Code (selected) onto the dock. You will know you've done this correctly if you can see two copies of the icon like in this screenshot:
+<img width="903" height="608" alt="VSCode: both the .app and the link in the Dock are visible after installation." src="https://github.com/user-attachments/assets/68c65012-fdb1-4df8-8663-bc67cec39984" />
 
-Congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
+10. You don't need anything on your desktop anymore; you can remove the following three files if you'd like to clean up:
+<img width="120" height="342" alt="WPILibInstaller mounted dmg, executable, and artifacts file from top to bottom." src="https://github.com/user-attachments/assets/7cf3ecd6-a07d-43b8-b981-d9f4c6618eee" />
+
+11. Open VSCode from your dock and check for a little red and black "w" symbol around the top right like pictured. If you do not see one, come and see a software member for help or try the instructions again.
+<img width="134" height="83" alt="Screenshot 2025-09-02 at 9 41 07 PM" src="https://github.com/user-attachments/assets/a77fc53a-54d5-46cd-8f3b-4736256be1aa" />
+
+If that's present, congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
 ## A Terminal
 
 A terminal program is a program that lets you type in terminal commands. It's generally the most efficient and fast method of accomplishing tasks, despite being noticeably harder to set up. kitty and iTerm2 are two popular terminal editors that this document explains how to install if you'd like, but most tasks in these documents don't need a terminal, so if you're ok with sacrificing an admittedly small amount of productivity and efficiency for ease of use, feel free to use a GUI (for FRC purposes, you can do most of your tasks with the VSCode GUI).
 
-The VSCode terminal is the easiest to set up as you've already done so. kitty is Sebastian's preferred terminal, but the differences between the three are relatively nonexistent.
+The VSCode terminal is the easiest to set up as you've already done so. kitty is Sebastian's preferred terminal, but the differences between the three are relatively nonexistent for our purposes.
 
 ### VSCode terminal
 
