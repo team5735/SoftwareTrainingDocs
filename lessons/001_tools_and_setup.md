@@ -14,7 +14,7 @@ WPILib, developed at WPI, is a package of most necessary tools for FRC programmi
 2. Scroll down and click the link that ends in 'Mac (Arm)'.
 3. Open the downloaded file. It's large, so get ready to wait for the download.
 4. This should open a new window. Drag the app named WPILibInstaller and the other zip-like file contained in the .dmg (disk image) onto your desktop.
-.5 Open the new "WPILibInstaller" application (it should be the only thing named that that's new to your desktop) by double-clicking it, then selecting "Open" and "Allow" when your computer gives popups.
+5. Open the new "WPILibInstaller" application (it should be the only thing named that that's new to your desktop) by double-clicking it, then selecting "Open" and "Allow" when your computer gives popups.
 6. In the window opened by the installer, select "Start," "Install for this User," and "Download for this computer only" as the buttons appear.
 7. Wait for VSCode to install. It should take a few seconds.
 8. Click "Next" once the first progress bar is finished and wait for other installations to finish. This will take some time. Click "Finish" when it's done.
