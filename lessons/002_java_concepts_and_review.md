@@ -2,14 +2,17 @@
 
 ## Intro
 
-Welcome to Java! If you've taken APCSA or otherwise know Java, this will be a review- feel free to tune us out until we get to the cooler stuff. If you're otherwise familiar with programming, I again apologize but we have to get everybody on the same page. If not, or if you're currently taking it, don't worry! We'll walk you through it step-by-step. If this lesson isn't enough, you can learn as you go and/or find a guide online to get you started. Remember, you can always go back and look at this document.
-And if you'd like to play with some code, you can mess around in the example repository that we cloned last time.
+Welcome to our second lesson!
 
-We'll also cover some cool Java features that you might not have seen before. These work nicely with WPILib to help us write better code.
+If you've taken APCSA or otherwise know Java, this will be a review- feel free to tune us out until we get to the cooler stuff.  If you're otherwise familiar with programming, you should be able to follow as we introduce Java's versions of basic concepts. If you don't know any programming, you can still follow if you put in the effort to learn how to think for coding as you go, whether that be by asking other software members or the leadership or the internet.
 
-## The Building Blocks of Java
+And if you'd like to play with some code as you go, you can mess around in the example repository that you cloned last time. You can always throw away anything you don't like.
 
-At its core, Java is all about **variables**. A variable is just a container for a piece of information. There are two main types of variables:
+Even if you took APCSA, we'll cover some cool Java features that you might not have seen before, so pay attention for those. These work nicely with WPILib to help us write better code.
+
+## Introduction to Java
+
+### Java data types
 
 **Primitives:** These are relatively simple and small in number.
 
@@ -26,23 +29,31 @@ At its core, Java is all about **variables**. A variable is just a container for
 * ... and many, many more ...
 
 > [!TIP]
-> Notice how primitive types are all lowercase, while object types start with a capital letter? That's a handy way to tell them apart!
+> Notice how primitive types are all lowercase, while object types start with a capital letter. That's a handy way to tell them apart!
 
-## A Class Act
+### Classes
 
 In Java, all of our code lives inside of **classes**. A class, most succinctly, represents something. Here's the typical structure of a class:
 
-* **Instance Variables:** These are variables that belong to the class itself. They're usually declared at the top of the class.
+* **Instance Variables:** These are variables that belong to the class itself. They're usually declared at the top of the class and define the properies of the thing.
 * **Constructors:** A constructor is a special method that gets called when you create a new object from the class. It's like the object's setup wizard.
-* **Methods:** Methods are the actions that an object can perform. They're like the object's special abilities.
+* **Methods:** Methods are the actions that an object can perform. They tell you what this thing can do.
 
-## Like Father, Like Son: Inheritance
+Defining a new class defines a new type of object. The classes listed above under 'objects', therefore, have this same format.
+
+### Inheritance
 
 **Inheritance** is a fancy word for a simple idea: you can create a new class that's based on an existing class. The new class (the "subclass") inherits all the methods and variables of the original class (the "parent class").
 
-This is super useful because it lets us reuse code and create specialized versions of our classes.
+This is super useful because it lets us reuse code and create specialized versions of our classes. We don't use this much in robot code (preferring interfaces, thanks to WPILib's design) but you should still know that inheritance is spelled like this in Java:
 
-## New Tools for Your Toolbox
+```java
+class Subclass extends Superclass {
+    // ...
+}
+```
+
+## Fanciness inbound!
 
 If you were tuning us out, now's the time to listen up. These aren't covered in your average APCSA course, but are more common in other languages.
 
