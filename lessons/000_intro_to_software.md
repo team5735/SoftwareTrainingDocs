@@ -24,8 +24,8 @@ Here on the Control Freaks, we use **Java**, because it's taught in APCSA at WHS
 
 We use a "Command-based" programming model. It sounds fancy, but the idea is simple:
 
-* **Subsystems:** We break the robot down into its physical parts in the code. The drivetrain, the shooter, the climber – each of these is a **subsystem**.
-* **Commands:** A **command** is a specific action that a subsystem can perform. For example, the shooter subsystem might have a "shoot" command, and the drivetrain might have a "drive forward" command.
+* **Subsystems:** We break the robot down into its physical parts in the code. The drivetrain, the shooter, the climber – each of these is a **subsystem** of the whole robot. This is similar to how we break down a human into its body parts. The arms, the hands, the legs, and the head are all subsystems of a whole human.
+* **Commands:** A **command** is a specific action that a subsystem can perform. For example, the shooter subsystem might have a "shoot" command, and the drivetrain might have a "drive forward" command. In our example of a human, the leg would have a command for taking a step, the hand would have a command for grabbing something, and the mouth would have a command for opening and closing.
 
 With this structure, our code directly represents the robot and its behaviour, which makes the code much easier to write and think about.
 
