@@ -4,7 +4,7 @@
 
 Welcome to our second lesson!
 
-If you've taken APCSA or otherwise know Java, this will be a review- feel free to tune us out until we get to the cooler stuff.  If you're otherwise familiar with programming, you should be able to follow as we introduce Java's versions of basic concepts. If you don't know any programming, you can still follow if you put in the effort to learn how to think for coding as you go, whether that be by asking other software members or the leadership or the internet.
+If you've taken APCSA or otherwise know Java, this will be a review — feel free to tune us out until we get to the cooler stuff.  If you're otherwise familiar with programming, you should be able to follow as we introduce Java's versions of basic concepts. If you don't know any programming, you can still follow if you put in the effort to learn how to think for coding as you go, whether that be by asking other software members or the leadership or the internet.
 
 And if you'd like to play with some code as you go, you can mess around in the example repository that you cloned last time. You can always throw away anything you don't like.
 
@@ -19,13 +19,13 @@ Even if you took APCSA, we'll cover some cool Java features that you might not h
 * `int`: A whole number (e.g., 1, -5, 100).
 * `double`: A number with a decimal point (e.g., 3.14, -0.5).
 * `boolean`: Either true or false.
-* `char`: A single character (e.g., 'a', '!', '7').
+* `char`: A single character encased in single quotes (e.g., 'a', '!', '7').
 
 **Objects:** These are more complex data types with their own capabilities.
 
-* `String`: A sequence of characters (e.g., "Hello, world!").
-* `Array`: A fixed-size list of items of the same type.
-* `ArrayList`: A resizable list of items of the same type.
+* `String`: A sequence of characters encased in double quotes (e.g., "Hello, world!").
+* `Array`: A fixed-size list of items of the same type (e.g., {1, 2, 3}, {"Rayan", "am", "goated!"}).
+* `ArrayList`: A resizable list of items of the same type (which look the same).
 * ... and many, many more ...
 
 > [!TIP]
@@ -33,7 +33,7 @@ Even if you took APCSA, we'll cover some cool Java features that you might not h
 
 ### Classes
 
-In Java, all of our code lives inside of **classes**. A class, most succinctly, represents something. Here's the typical structure of a class:
+In Java, all of our code lives inside of **classes**. A class, most succinctly, represents a blueprint for something, and can be compared to the blueprint of a house. Instances of classes can be created, often referred to as objects, and can be compared to the fully constructed house that originates from the blueprint. Here's the typical structure of a class:
 
 * **Instance Variables:** These are variables that belong to the class itself. They're usually declared at the top of the class and define the properies of the thing.
 * **Constructors:** A constructor is a special method that gets called when you create a new object from the class. It's like the object's setup wizard.
@@ -43,7 +43,7 @@ Defining a new class defines a new type of object. The classes listed above unde
 
 ### Inheritance
 
-**Inheritance** is a fancy word for a simple idea: you can create a new class that's based on an existing class. The new class (the "subclass") inherits all the methods and variables of the original class (the "parent class").
+**Inheritance** is a fancy word for a simple idea: you can create a new class that's based on an existing class. The new class (the "subclass") inherits all the methods and variables of the original class (the "parent class"), and can be referenced without any prior mention inside the subclass.
 
 This is super useful because it lets us reuse code and create specialized versions of our classes. We don't use this much in robot code (preferring interfaces, thanks to WPILib's design) but you should still know that inheritance is spelled like this in Java:
 
@@ -57,12 +57,16 @@ class Subclass extends Superclass {
 
 If you were tuning us out, now's the time to listen up. These aren't covered in your average APCSA course, but are more common in other languages.
 
+> [!WARNING]
+> If you do not understand everything mentioned above, then please let us know and we will try to review it.
+> It will be even more difficult to understand what lies ahead without a foundational understanding fo the basics.
+
 ### `static` and `final`
 
 These are special keywords that you can add to a variable.
 
 * `static`: A `static` variable is shared by all instances of a class. It's like a global variable for that class.
-* `final`: A `final` variable can only be assigned a value once. It's a constant.
+* `final`: A `final` variable can only be assigned a value once. It's a constant. You cannot change this variable elsewhere while your program is running.
 
 > [!IMPORTANT]
 > We usually write `final` variable names in all caps, with underscores to separate words (e.g., `MAX_SPEED`).
@@ -70,13 +74,13 @@ These are special keywords that you can add to a variable.
 
 ### Enums: The Picky Eater's Best Friend
 
-An **enum** is a special type of class that lets you define a set of constant values. It's perfect for when you have a limited number of options for something.
+An **enum** is a special type of class that lets you define a set of constant values. It's perfect for when you have a limited number of modes or options for something.
 
-For example, you could use an enum to represent the different states of a shooter: `IDLE`, `SPINNING_UP`, `READY_TO_SHOOT`.
+For example, you could use an enum to represent the different states of a shooter: `IDLE`, `SPINNING_UP`, `READY_TO_SHOOT`. A traffic light could also be represented by an enum, with its states of `RED`, `YELLOW`, and `GREEN`.
 
 ### Lambda Functions: The Cool Kid on the Block
 
-**Lambda functions** (or "lambdas" for short) are like mini-methods that you can create on the fly. They're a concise way to write code that you only need to use once.
+**Lambda functions** (or "lambdas" for short) are like mini-methods that you can create on the fly. They're a concise way to write code that you only need to use once, rather than create a whole new funtion in the space of one's code.. If a function is a reusable straw, thena a lambda is a single-use straw.
 
 The main conceptual leap with lambdas is that you can treat them as objects. Here's some example code that *might* help, but it's no problem if it doesn't:
 
@@ -116,7 +120,7 @@ At pain of dying by repetition, I'll say again that you can find these lesson do
 
 ## Units
 
-Units are a relatively new feature in WPILib, but they're very welcome. They let us write safer code - that means code that's harder to make mistakes with - by using the type system in Java to automagically convert between units as needed.
+Units are a relatively new feature in WPILib, but they're very welcome. They let us write safer code — that means code that's harder to make mistakes with — by using the type system in Java to automagically convert between units as needed.
 
 There are a few types of unit classes. Assuming you're set up correctly, you should be able to use them without issue, as long as you autocomplete the unit names.
 
