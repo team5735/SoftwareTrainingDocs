@@ -4,11 +4,11 @@
 
 When you open up our robot code, there are a lot of files and folders, but 90% of your time will be spent within `src/main/java/frc/robot`.
 
-* **`Robot.java`**: This runs the command-based framework.
-* **`RobotContainer.java`**: This is where we set up all our subsystems and commands and bind buttons.
-* **`subsystems/`**: Subsystem classes. Generally one exists for each discrete part of the robot.
-* **`commands/`**: Command classes. In production code, this is mostly larger commands and more complex tasks.
-* **`constants/`**: Constants files. Generally one exists for each subsystem.
+* **`Robot.java`**: This file runs the command-based framework. This file is called by **`Main.java`**, and calls **`RobotContainer.java`**.
+* **`RobotContainer.java`**: This file is where we set up all our subsystems and commands and bind buttons. This file calls the different **`subsystems`** created with diifferent button presses on the Xbox controller we use.
+* **`subsystems/`**: This folder contains all of the files for subsystem classes. Generally one exists for each discrete part of the robot.
+* **`commands/`**: This folder contains all of the files for command classes. In production code, this is mostly larger commands and more complex tasks.
+* **`constants/`**: This folder contains all of files for constants. Generally one exists for each subsystem.
 
 ## The Circle of Life
 
