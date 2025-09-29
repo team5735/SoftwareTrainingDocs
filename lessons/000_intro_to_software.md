@@ -37,9 +37,7 @@ Now onto the setup of our tools!
 
 # Setup
 
-The setup is easier to follow if you have the Markdown version open in your browser. The easiest way to go there is to type the following into your browser's address bar exactly:
-`github.com/team5735/SoftwareTrainingDocs`
-Then, click on the `lessons` folder, followed by `001_tools_and_setup.md` (this document).
+The setup is easier to follow if you have the Markdown version open in your browser. Either type in the link from the previous lesson or go to the bookmark if you bookmarked it. Then, click on the `lessons` folder, followed by `000_intro_to_software.md` (this document).
 
 ## WPILib
 
