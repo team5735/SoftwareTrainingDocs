@@ -1,43 +1,39 @@
 # Intro to Software
 
-Welcome to the Software subteam in the Control Freaks. This'll be a short first lesson to get you into the world of software.
+Welcome to the Software subteam in the Control Freaks. This lesson should be a short whetting of your appetite for software, followed by a guide to installing our commonly used tools.
 
 Think of software as the robot's nervous system. It's the code that:
 
-* **Gathers information** from sensors.
-* **Makes decisions** based on that information.
-* **Sends commands** to the motors and other moving parts.
+* Gathers input, whether that be from sensors or the controller.
+* Makes decisions based on that input.
+* Sends commands to the motors and other moving parts to perform the task of the game.
 
-## What Language Do We Use?
+## Our language of choice
 
-Inside every FRC robot is a computer called the **RoboRIO** made specifically for this competition. Our job is to write code that will run on that computer. The FRC community has created a fantastic set of tools called **WPILib** that makes writing robot code much easier. WPILib officially supports three languages:
+Here on the Control Freaks, we use Java, because it's taught in APCSA at WHS, making it accessible to many students. Don't worry, however, if you've never written a line of Java in your life- we'll teach you everything you need to know in lesson 001 (that's the second lesson).
 
-* C++
-* Java
-* Python
+Inside every FRC robot is a computer called the RoboRIO made specifically for this competition. Our job is to write code that will run on that computer. The FRC community has created a fantastic set of tools called WPILib that makes writing robot code much easier. In a very real sense, because the Java you use here is very different from the Java you might have learned in APCSA, we write code in "WPILib" as opposed to Java.
 
-Here on the Control Freaks, we use **Java**, because it's taught in APCSA at WHS, making it accessible to many students. But don't worry if you've never written a line of Java in your life! We'll teach you everything you need to know in lesson 002 (the third one), after setup.
-
-### How We Structure Our Code
+## How We Structure Our Code
 
 We use a "Command-based" programming model. It sounds fancy, but the idea is simple:
 
-* **Subsystems:** We break the robot down into its physical parts in the code. The drivetrain, the shooter, the climber – each of these is a **subsystem** of the whole robot. This is similar to how we break down a human into its body parts. The arms, the hands, the legs, and the head are all subsystems of a whole human.
-* **Commands:** A **command** is a specific action that a subsystem can perform. For example, the shooter subsystem might have a "shoot" command, and the drivetrain might have a "drive forward" command. In our example of a human, the leg would have a command for taking a step, the hand would have a command for grabbing something, and the mouth would have a command for opening and closing.
+* Subsystems: A subsystem represents a discrete part of the physical robot.
+* Commands: A command represents a specific action that a subsystem can perform.
 
-With this structure, our code directly represents the robot and its behaviour, which makes the code much easier to write and think about.
-
-You'll learn more about this in lesson 003.
+With this structure, our code directly represents the robot and its behaviour, which makes it much easier to write and think about. You'll learn more about this in lesson 003.
 
 ## The Software Subteam
 
-Our job is to write this code. Ideally, we work closely with the people who chose mechanical, so that they don't build something we can't code and so that our code makes sense with whatever they've built.
+Our job is, as stated previously, to write the code, ideally structured as above. Ideally, we work closely with the people who chose mechanical, so that they don't build something we can't code and so that our code makes sense with whatever they've built.
 
 ## These lessons
 
 These lessons are all available online: `https://github.com/team5735/SoftwareTrainingDocs`
 
 If you'd like to save that link, you can type it into your browser right now and bookmark it. Go on, don't be afraid, a link can't hurt you. To find the lesson documents themselves from that link, go to the lessons folder and click on any file.
+
+Now onto the setup of our tools!
 
 # Setup
 
