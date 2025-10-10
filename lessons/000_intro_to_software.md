@@ -58,7 +58,7 @@ WPILib, developed at WPI, is a package of most necessary tools for FRC programmi
 <img width="120" height="342" alt="WPILibInstaller's mounted dmg, executable, and artifacts file from top to bottom." src="https://github.com/user-attachments/assets/7cf3ecd6-a07d-43b8-b981-d9f4c6618eee" />
 
 11. Open VSCode from your dock and check for a little red and black "w" symbol around the top right like pictured. If you do not see one, come and see a software member for help or try the instructions again.
-<img width="134" height="83" alt="The red and gray </>-like WPILib icon is visible at the top right of a VSCode window." src="https://github.com/user-attachments/assets/a77fc53a-54d5-46cd-8f3b-4736256be1aa" />
+<img width="134" height="83" alt="The red and gray &lt;/&gt;-like WPILib icon is visible at the top right of a VSCode window." src="https://github.com/user-attachments/assets/a77fc53a-54d5-46cd-8f3b-4736256be1aa" />
 
 If that's present, congratulations, you've installed WPILib and VSCode! You're almost ready to write robot code.
 
