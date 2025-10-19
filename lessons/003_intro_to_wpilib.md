@@ -75,12 +75,12 @@ public class Grab extends Command {
     }
 
     @Override
-    public void initialize() {
-        this.algae.grab();
-    }
+    public void initialize() {}
 
     @Override
-    public void execute() {}
+    public void execute() {
+        this.algae.grab();
+    }
 
     @Override
     public void end(boolean interrupted) {
@@ -94,7 +94,9 @@ public class Grab extends Command {
 }
 ```
 
-This command, when *constructed*, stores away the given Algae object for safekeeping (this is an instance of the Algae class from earlier). Then, when *initialized* (something specific to commands), it starts the motor. The `execute` function is run continuously, but doesn't need to do anything, so it's empty (and doesn't need to be there). When the command `end`s, it is told whether it's been interrupted, which is rarely useful but matters sometimes. And the final function, `isFinished`, is called to query whether the command is done with its job and should be done. This command runs until it's told to stop, so it never stops on its own (and because `isFinished` always returns false, `end` is always passed `true`).
+This command, when *constructed*, stores away the given Algae object for safekeeping (this is an instance of the Algae class from earlier). Then, when *initialized* (something specific to commands and different from construction), it starts the motor. The `execute` function is run continuously, but doesn't need to do anything, so it's empty (and doesn't need to be there). When the command `end`s, it is told whether it's been interrupted, which is rarely useful but matters sometimes. And the final function, `isFinished`, is called to query whether the command is done with its job and should be done. This command runs until it's told to stop, so it never stops on its own (and because `isFinished` always returns false, `end` is always passed `true`).
+
+Believe it or not, an instance of Grab does almost exactly the same thing as `getGrabStop()` from the command factories. The function `runEnd()` (available inside subsystems, elsewhere you should use `Commands.runEnd(lambda, lambda, requirements...)`, which is identical given the correct requirements) is one of many command factory-enabling functions, along with `run()` (runs the lambda forever with no ending function), `runOnce()` (runs the lambda once and finishes immediately), and many others you can find [here](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html) are all incredibly useful for writing less code that does more, which we want.
 
 Perhaps a bit more information would be beneficial. In WPILib, there's a class called the CommandScheduler. This class schedules and manages all running commands (and their subsystems). If you want, you can look at it by using 'go to definition' on the call to `run()` in Robot#robotPeriodic(). To put it simply:
 
@@ -106,3 +108,17 @@ Perhaps a bit more information would be beneficial. In WPILib, there's a class c
         - If they are, call `end(false)` and remove them from the active commands list.
 
 There are a few other details relevant to using commands, but if you understand this core logic then all commands should be relatively easy to think about.
+
+## Actually using commands in practice
+
+Only in rare advanced scenarios are commands manually scheduled. Typically, WPILib schedules them for us, primarily through the use of triggers. Triggers are a complex subject that we'll cover in full later (if at all formally), but for now all you need to know is that a `Trigger` object represents a boolean value through time (at each tick). By far the most common trigger is from command-based controllers:
+
+```java
+// (in RobotContainer, typically)
+private final CommandXboxController driveController = new CommandXboxController(Constants.DRIVE_CONTROLLER_PORT);
+
+private final Algae algaer = new Algae();
+
+// in configureBindings
+driveController.a().whileTrue(new Grab())
+```
