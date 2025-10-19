@@ -120,5 +120,23 @@ private final CommandXboxController driveController = new CommandXboxController(
 private final Algae algaer = new Algae();
 
 // in configureBindings
-driveController.a().whileTrue(new Grab())
+driveController.a().whileTrue(new Grab(algaer));
 ```
+
+There's a few things I'd like to point out about this example. First of all, `driveController` and `algaer` are instance variables of the `RobotContainer`. Second, `driveController.a()` is a trigger representing the A button on the Xbox controller at that port (typically 0 in our projects, this refers to the port in the FRC Driver Station). This means that when A is pressed, driveController.a() is true.
+
+The method `Trigger#whileTrue(Command)` 'registers' (loosely speaking) the passed Command object to be scheduled (with `Command#schedule()`) when the trigger goes from false to true and cancelled (interrupted) when the trigger goes from true to false. In this case, that would make the motor associated with this algaer start spinning when the button is pressed and stop when it's released.
+
+---
+
+# Task
+
+Your first task for this lesson is, in the training repository for this year, to make a branch for yourself and make a simple motor subsystem like the above. You should follow all the conventions we follow in the 2025 code repository as well as the ones laid out in style-guide.md (in this repository). If you don't have access to the breadboards we (hope to) have in our lesson during the workshop, you can simply write the code and check against the 2025 code.
+
+Next, let's make your code more complicated. Add whatever code is necessary to handle two motors with the following things being true:
+- While the 'robot' (breadboard) is enabled, one motor is always running.
+- Holding A switches the currently running motor.
+- Holding B *also* switches the currently running motor.
+    - (holding both runs the same motor as neither)
+
+Here's your third challenge: Make the two-motor example from before spin the currently running motor in a direction determined by the triggers: if the left trigger is held, spin left; if the right trigger is held, spin right; if both are held, don't spin.
