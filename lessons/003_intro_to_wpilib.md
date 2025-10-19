@@ -48,15 +48,15 @@ As you can see, the core of this class is really not all that complicated, refle
 Commands, in contrast to subsystems, represent (in a very simple way) actions the robot can take. Note how the above functions are just normal functions. These are fine, but that's not how WPILib works. WPILib uses commands! Note how 'command factories for the above' are cut out from the code snippet. Here's what said command factories look like:
 
 ```java
-public Command grabStopCommand() {
+public Command getGrabStop() {
     return startEnd(() -> grab(), () -> stop());
 }
 
-public Command spitStopCommand() {
+public Command getSpitStop() {
     return startEnd(() -> spit(), () -> stop());
 }
 
-public Command stopCommand() {
+public Command getStop() {
     return runOnce(() -> stop());
 }
 ```
