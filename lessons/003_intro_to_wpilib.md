@@ -15,13 +15,13 @@ Subsystems are classes that extend `SubsystemBase` and represent a part of the r
 ```java
 // (`package` and imports)
 
-public class Algae extends SubsystemBase {
+public class AlgaeSubsystem extends SubsystemBase {
     private final TalonFX falcon = new TalonFX(Constants.ALGAE_FALCON_ID);
 
     private TunableNumber grabVolts = new TunableNumber("algae", "grab_volts", AlgaeConstants.GRAB_VOLTS);
     private TunableNumber spitVolts = new TunableNumber("algae", "spit_volts", AlgaeConstants.SPIT_VOLTS);
 
-    public Algae() {
+    public AlgaeSubsystem() {
         falcon.getConfigurator().apply(new MotorOutputConfigs().withNeutralMode(NeutralModeValue.Brake));
     }
 
@@ -45,31 +45,15 @@ As you can see, the core of this class is really not all that complicated, refle
 
 ### Commands
 
-Commands, in contrast to subsystems, represent (in a very simple way) actions the robot can take. Note how the above functions are just normal functions. These are fine, but that's not how WPILib works. WPILib uses commands! Note how 'command factories for the above' are cut out from the code snippet. Here's what said command factories look like:
-
-```java
-public Command getGrabStop() {
-    return startEnd(() -> grab(), () -> stop());
-}
-
-public Command getSpitStop() {
-    return startEnd(() -> spit(), () -> stop());
-}
-
-public Command getStop() {
-    return runOnce(() -> stop());
-}
-```
-
-I told you you needed to understand lambdas. However, to best explain these command factories, it's probably best to use a full Command class. Here's an example:
+Commands, in contrast to subsystems, represent (in a very simple way) actions the robot can take. Note how the above functions are just normal functions. These are fine, but that's not how WPILib works. WPILib uses commands! Note how 'command factories for the above' are cut out from the code snippet. Don't worry about those. To best explain these commands, it's best to use a full Command class. Here's such a class:
 
 ```java
 // (`package` and imports)
 
-public class Grab extends Command {
-    private Algae algae;
+public class GrabCommand extends Command {
+    private AlgaeSubsystem algae;
 
-    public Grab(Algae algae) {
+    public GrabCommand(AlgaeSubsystem algae) {
         this.algae = algae;
         addRequirements(algae);
     }
@@ -79,12 +63,12 @@ public class Grab extends Command {
 
     @Override
     public void execute() {
-        this.algae.grab();
+        algae.grab();
     }
 
     @Override
     public void end(boolean interrupted) {
-        this.algae.stop();
+        algae.stop();
     }
 
     @Override
@@ -117,13 +101,13 @@ Only in rare advanced scenarios are commands manually scheduled. Typically, WPIL
 // (in RobotContainer, typically)
 private final CommandXboxController driveController = new CommandXboxController(Constants.DRIVE_CONTROLLER_PORT);
 
-private final Algae algaer = new Algae();
+private final AlgaeSubsystem algae = new AlgaeSubsystem();
 
 // in configureBindings
-driveController.a().whileTrue(new Grab(algaer));
+driveController.a().whileTrue(new GrabCommand(algae));
 ```
 
-There's a few things I'd like to point out about this example. First of all, `driveController` and `algaer` are instance variables of the `RobotContainer`. Second, `driveController.a()` is a trigger representing the A button on the Xbox controller at that port (typically 0 in our projects, this refers to the port in the FRC Driver Station). This means that when A is pressed, driveController.a() is true.
+There's a few things I'd like to point out about this example. First of all, `driveController` and `algae` are instances of the `RobotContainer`. Second, `driveController.a()` is a trigger representing the A button on the Xbox controller at that port (typically 0 in our projects, this refers to the port in the FRC Driver Station). This means that when A is pressed, driveController.a() is true.
 
 The method `Trigger#whileTrue(Command)` 'registers' (loosely speaking) the passed Command object to be scheduled (with `Command#schedule()`) when the trigger goes from false to true and cancelled (interrupted) when the trigger goes from true to false. In this case, that would make the motor associated with this algaer start spinning when the button is pressed and stop when it's released.
 
@@ -131,12 +115,10 @@ The method `Trigger#whileTrue(Command)` 'registers' (loosely speaking) the passe
 
 # Task
 
-Your first task for this lesson is, in the training repository for this year, to make a branch for yourself and make a simple motor subsystem like the above. You should follow all the conventions we follow in the 2025 code repository as well as the ones laid out in style-guide.md (in this repository). If you don't have access to the breadboards we (hope to) have in our lesson during the workshop, you can simply write the code and check against the 2025 code.
+Here are the three tasks:
 
-Next, let's make your code more complicated. Add whatever code is necessary to handle two motors with the following things being true:
-- While the 'robot' (breadboard) is enabled, one motor is always running.
-- Holding A switches the currently running motor.
-- Holding B *also* switches the currently running motor.
-    - (holding both runs the same motor as neither)
+1. Make a `MotorCommand` and `MotorSubsystem` modelling the above command and subsystem examples (you can also look at `ExampleCommand` and `ExampleSubsystem`). Bind an instance of that `MotorCommand` to the a button with the line `m_driverController.b().whileTrue(new MotorCommand(motor));` and make it so that the motor's voltage is set to 1 when the button is pressed and set to 0 when the button is released (with `setVoltage`).
 
-Here's your third challenge: Make the two-motor example from before spin the currently running motor in a direction determined by the triggers: if the left trigger is held, spin left; if the right trigger is held, spin right; if both are held, don't spin.
+2. Now, modify your `MotorSubsystem` and `MotorCommand` to handle two motors at once. Only one should run at each time, and instead of running one motor, the a button should *switch* which motor is running.
+
+3. Modify those same classes to have the motor speed reflect the right trigger. Specifically, the voltage of whichever motor is running should be set to 1 + the trigger.
